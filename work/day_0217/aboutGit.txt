@@ -1,0 +1,31 @@
+git 꼬여서 복구 등 하다가 알게 된 것들
+
+
+기본
+
+cd : 최상위 폴더로 이동
+dir : 현재 위치의 폴더 확인
+cd xx : 현재 위치에 있는 xx폴더로 이동
+(cd 로 원하는 폴더로 이동 후)git init : 현재 폴더를 로컬 repository로 설정 (이걸 해줘야 깃배쉬 작동)
+
+깃헙 연동하고 main branch 생성 및 작업 후 master branch에 merge 하고 github에 push하는 과정 순서대로 적음
+
+git remote add origin https://github.com/~~~ : github를 origin이라는 별칭으로 원격으로 등록
+git branch : branch 확인
+git branch ~~ : ~~ branch 생성
+git add * : 작업 폴더 내 변경사항들을 인덱스?에 추가 (깃에 그 커밋하기 전 공간을 인덱스라 말하는건지 정확히 모르겠음)
+git commit -m '~~~~' : ~~~~라는 코멘트와 함께 커밋
+	!! 만약 merge 할 거라면 push 하지 말 것 !!
+git checkout ~~ : ~~ branch로 checkout. (작업 위치 이동)
+	ex ) git checkout master 입력 시 지금부터 마스터에서 작업
+(master 에서)git merge main : main을 master로 merge(병합).
+git push origin master : origin에 master를 push
+	여기서 오류 발생 시 git push -f origin master 혹은 git push origin +master 를 사용하여 강제로 push할 수 있지만 권장하지 않음.
+
+깃 리셋 관련
+
+git log : commit log 보기
+git reset [option] [돌아가고 싶은 커밋] : git log로 돌아가고 싶은 커밋을 찾았다면 그 지점으로 리셋.
+	여기서 option은 --hard(돌아가려는 이력 이후의 모든 내용 삭제), --soft(되돌아가지만 이후 내용 삭제x, 이후 내용의 인덱스(혹은 스테이지)도 유
+	지), --mixed(기본값. 옵션 안적으면 이걸로 동작. 이후에 변경된 내용은 남아있지만 인덱스는 초기화됨)
+git revert 도 있다는데 당장 필요했던게 reset이었어서 잘모름 나중에 찾지않을까?
