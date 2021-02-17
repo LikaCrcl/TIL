@@ -72,7 +72,7 @@ public class Day_0217 {
 		}
 		
 		System.out.println("짝수 합산 : "+b+" 홀수 합산 : "+c);
-		System.out.println();
+		System.out.println("머지 왜안됨 시발");
 		
 		
 	}
