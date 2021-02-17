@@ -8,7 +8,7 @@ public class Day_0217 {
 
 	public static void main(String[] args) {
 		
-		// switch문 (sw까지 쓰고 Ctrl+Space 누르면 기본형 자동완성)
+		// 조건문 switch (sw까지 쓰고 Ctrl+Space 누르면 기본형 자동완성)
 //		switch (key) {
 //			case value:
 //				
@@ -128,11 +128,20 @@ public class Day_0217 {
 		// 반복문 for. for 치고 Ctrl+Space 하면 기본형 나옴
 		// for (초기화; 조건; 증감) {}
 		// 가운데 조건이 true일 때 들어와서 출력되고, 조건이 false라면 들어오지 않고 무시함. || && if 등과 유사
+		// 조건이 false가 되는 순간부터 반복을 멈추고 for문은 끝남. (false 출력 x)
 		for (int i = 8; i < 10; i++) {
 			System.out.println(i);
 			System.out.println(10 < 10);
 		}
-		// a
+		
+		// for문에서 마지막 false까지 출력하기 예제
+		for (int i = 8; i < 10; i++) {
+			System.out.println(i +" : "+(i < 10));
+			if (i == 9) {
+				System.out.println("10 : "+(10 < 10));
+			}
+		}
+		
 		
 	}
 	
