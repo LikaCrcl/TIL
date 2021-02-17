@@ -1,0 +1,5 @@
+git merge 하고싶어서 이래저래 만지다가 파일 다 날라갔는데 branch 되돌려서 복구함
+근데 eclipse에서 다시 실행해보니 run이 안됨(run 누르면 Run As 창 뜨면서 Ant만 두개 있었음)
+.metadata 폴더 안 파일이 깨진 줄 알았는데 이클립스에서 workspace를 전부 불러와야 되는거였음
+
+eclipse 에서 왼쪽 위 file 에 Open projects from file system 으로 실행 가능
