@@ -142,6 +142,16 @@ public class Day_0217 {
 			}
 		}
 		
+		// for문 첫번째만 false, 나머지 true 출력 예제
+		for (int i = 0; i < 3; i++) {
+			if (i == 0) {
+				System.out.println(i+" : false");
+			}
+			else {
+				System.out.println(i+" : "+(i < 3));
+			}
+		}
+		//
 		
 	}
 	
