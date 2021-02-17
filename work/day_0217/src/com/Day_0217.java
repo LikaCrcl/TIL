@@ -125,6 +125,7 @@ public class Day_0217 {
 			break;
 		}
 		
+		
 		// 반복문 for. for 치고 Ctrl+Space 하면 기본형 나옴
 		// for (초기화; 조건; 증감) {}
 		// 가운데 조건이 true일 때 들어와서 출력되고, 조건이 false라면 들어오지 않고 무시함. || && if 등과 유사
