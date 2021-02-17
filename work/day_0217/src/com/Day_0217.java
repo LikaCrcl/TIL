@@ -1,6 +1,8 @@
 package com;
 
 public class Day_0217 {
+	
+	static int num_2;
 
 	public static void main(String[] args) {
 		
@@ -72,9 +74,28 @@ public class Day_0217 {
 		}
 		
 		System.out.println("짝수 합산 : "+b+" 홀수 합산 : "+c);
-		System.out.println("머지 왜안됨 시발");
 		
+		int num_1 = 1; // 지역변수 : 함수 안에서 선언되는 변수. = 0 같이 값을 정해줘야(초기화해줘야)함
+		System.out.println("지역변수 : "+num_1);
 		
+		System.out.println("전역변수 : "+num_2); // 전역변수 : 함수 밖에서 (이 경우 맨 위쪽 public class 아래에서 선언) 선언된 변수. 초기화해주지 않아도 오류나지 않음."
+		
+		if (test(1)) { // 1의 의미는 test 함수의 매개변수에 1을 대입한 것. test 함수에서 n이 0이 아니면 true이므로 이 if문의 결과는 true
+			System.out.println("true");
+		}
+		else {
+			System.out.println("false");
+		}
+		
+	}
+	
+	static boolean test(int n) { // 여기서 int n 부분이 매개변수.
+		if (n == 0) {
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 	
 	static void switch_test() { // 위의 콜백함수 main (지금 이 switch_test는 커스텀함수)이 너무 더러워졌고 코드는 남겨놔야 한다던가 하는 상황에 이렇게 따로 함수를 파서 놔둬도 ㄱㅊ
