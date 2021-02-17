@@ -21,6 +21,7 @@ git checkout ~~ : ~~ branch로 checkout. (작업 위치 이동)
 (master 에서)git merge main : main을 master로 merge(병합).
 git push origin master : origin에 master를 push
 	여기서 오류 발생 시 git push -f origin master 혹은 git push origin +master 를 사용하여 강제로 push할 수 있지만 권장하지 않음.
+	이 때 push를 pull로 바꿔서 사용도 가능
 
 깃 리셋 관련
 
