@@ -152,6 +152,8 @@ public class Day_0217 {
 			}
 		}
 		
+		System.out.println("git test");
+		
 	}
 	
 	static boolean test(int n) { // 여기서 int n 부분은 매개변수. 매개변수도 지역변수의 일종
