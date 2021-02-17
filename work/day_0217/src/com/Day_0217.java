@@ -151,7 +151,6 @@ public class Day_0217 {
 				System.out.println(i+" : "+(i < 3));
 			}
 		}
-		//
 		
 	}
 	
@@ -167,7 +166,7 @@ public class Day_0217 {
 	
 	static void switch_test() { // 위의 콜백함수 main (지금 이 switch_test는 커스텀함수)이 너무 더러워졌고 코드는 남겨놔야 한다던가 하는 상황에 이렇게 따로 함수를 파서 놔둬도 ㄱㅊ
 		// 이 커스텀함수를 다른 곳에서 불러오려 하는 경우, 부를 곳에 static이 있는지 없는지 확인해야함. 거기에 static이 있다면 여기에도 static을 써줘야 함
-		// 저 밑에 나타냈는데 부를 곳에 static이 없다면 불려지논 함수는 static이 있어도 되고 없어도 됨
+		// 저 밑에 나타냈는데 부를 곳에 static이 없다면 불려지논 함수는 static이 있어도 되고 없어도 ㄱㅊ
 		
 		int num = 0;
 		
@@ -185,8 +184,8 @@ public class Day_0217 {
 		switch_test();
 	}
 	
-	static void test3() {
+//	static void test3() {
 //		test2(); 는 안됨
-	}
+//	}
 
 }
