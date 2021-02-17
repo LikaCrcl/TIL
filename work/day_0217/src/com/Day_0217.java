@@ -71,7 +71,7 @@ public class Day_0217 {
 
 		}
 		
-		System.out.println("Â¦¼ö ÇÕ»ê : "+b+" È¦¼ö ÇÕ»ê : "+c);
+		System.out.println("Â¦¼ö ÇÕ»ê : "+b+" È¦¼ö ÇÕ»ê : "+c); // 
 		
 		
 	}
