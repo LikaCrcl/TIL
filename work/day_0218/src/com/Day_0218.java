@@ -51,6 +51,8 @@ public class Day_0218 {
 		
 		System.out.println("x : "+x+" y : "+y);
 		
+		// 점심시간 커밋 확인용
+		
 	}
 	
 	static void calculator(int n) {
