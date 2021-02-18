@@ -24,6 +24,40 @@ public class Day_0218 {
 			break;
 		}
 		
+		// for문과 method를 이용한 간단한 계산기
+//		calculator(10);
+		
+		// 구구단 2단~9단 출력 예제
+//		for (int i = 2; i < 10; i++) {
+//			for (int j = 1; j < 10; j++) {
+//				System.out.println((i+"*"+j+"="+(i*j)));
+//			}
+//		}
+		
+		// method 이용 구구단 출력 예제
+		for (int i = 2; i < 10; i++) {
+				calculator(i);
+		}
+		
+		// swap 이용 x에 60, y에 30 넣기
+		int x = 30;
+		int y = 60;
+		
+		int temp;
+		
+		temp = x;
+		x = y;
+		y = temp;
+		
+		System.out.println("x : "+x+" y : "+y);
+		
+	}
+	
+	static void calculator(int n) {
+		int number = n;
+		for (int i = 1; i < 10; i++) {
+			System.out.println(number+"*"+i+"="+number*i);
+		}
 	}
 
 }
