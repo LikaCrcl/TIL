@@ -25,14 +25,14 @@ public class Day_0218 {
 		}
 		
 		// for문과 method를 이용한 간단한 계산기
-//		calculator(10);
+		calculator(10);
 		
 		// 구구단 2단~9단 출력 예제
-//		for (int i = 2; i < 10; i++) {
-//			for (int j = 1; j < 10; j++) {
-//				System.out.println((i+"*"+j+"="+(i*j)));
-//			}
-//		}
+		for (int i = 2; i < 10; i++) {
+			for (int j = 1; j < 10; j++) {
+				System.out.println((i+"*"+j+"="+(i*j)));
+			}
+		}
 		
 		// method 이용 구구단 출력 예제
 		for (int i = 2; i < 10; i++) {
@@ -51,7 +51,37 @@ public class Day_0218 {
 		
 		System.out.println("x : "+x+" y : "+y);
 		
-		// 점심시간 커밋 확인용2
+		// while문
+		
+		String name = "helloworlds";
+		int n = name.length(); // name.length(); <- String의 글자 수를 int로 나타내주는 함수. n = 11
+		int count = 0;
+		
+		while (count < n) { // for문 처럼 ()안의 조건이 true일 때 while 안의 줄들을 순서대로 읽어나감. 
+			System.out.println(count+" : test");
+			if (count == 3) { // 이 안에 if를 쓸 수도 있음
+				break; // 여기서 break되는 조건은 count가 3이 됐을 땐데, 그 땐 이 if문을 빠져나가는게 아니라 while문 전체를 빠져나감.
+			}
+			count++;
+		} // break가 발동?하게되면 여기로 오게되는 것임.
+		
+		// for문과 다른점은 for에선 i++ 등을 써서 i에 증감을 설정해주는데 while은 위에 쓴 것 처럼 count++;을 써주지 않으면 count가 증감하지 않으므로 초기 설정된 count값에서 무한히 계속 돌게 됨.
+		// 여기서의 경우 count++;를 뺀다면 콘솔에 "0 : test"가 계속 무한히 출력되게 됨
+		
+		// while문으로 2단~9단 출력 예제
+		int num = 2;
+		int num2 = 1;
+		
+		while (num < 10) {
+			while (num2 < 10) {
+				System.out.println(num+"*"+num2+"="+(num*num2));
+				num2++;
+			}
+			num++;
+			num2=1; // 원래 이거 안쓰고 num++; 에서 끝내고 낑낑대고있었는데 이 줄에 println("0"); 해보고 깨달았음
+			// 문제는 저 안에있는 while문의 num2는 1로 다시 돌아오지 않고 10에서 멈춰있다는 거였음
+			// 그래서 다시 1로 초기화시켜줬더니 정상작동
+		}
 		
 	}
 	
