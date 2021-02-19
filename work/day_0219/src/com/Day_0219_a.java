@@ -73,17 +73,22 @@ public class Day_0219_a {
 //		}
 		
 		// 이등변삼각형 피라미드 만들기
-		for (int i = 1; i < 10; i++){
-			for (int j = 10; j > 0; j--) {
-				if (j < 10) {
-					System.out.print("*");
-				}
-				else {
-					System.out.print("-");
-				}
+		for (int i = 1; i < 10; i++) {
+			
+			for (int j = 0; j < 10-i; j++) {
+				System.out.print("a");
 			}
-		System.out.println();
+			for (int j = 1; j < i*2; j++) {
+				
+				System.out.print("*");
+			}
+			for (int j = 0; j < 10-i; j++) {
+				System.out.print("a");
+			}
+			
+			System.out.println("");
 		}
+		
 	}
 	
 	static void calculator(int n) {

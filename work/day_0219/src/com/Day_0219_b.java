@@ -14,7 +14,7 @@
 
 		public static void main(String[] args) {
 			
-			short_test3();
+			star_grid();
 
 		} // main
 		
