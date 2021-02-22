@@ -1,5 +1,7 @@
 package com;
 
+import java.util.Iterator;
+
 public class Day_0222_a {
 
 	public static void main(String[] args) {
@@ -85,12 +87,62 @@ public class Day_0222_a {
 		boolean is_test = (num2 < 100)? true:false;
 		System.out.println(num2 + " : " +is_test);
 		
-		// 배열 - (타입)[] (변수)[] int[] nums;
+		// 배열(Array) - (타입)[] (변수) = new (타입)[(갯수(int))];
 		int[] nums = new int[3500]; // int[3] : 변수를 0부터 3500개 선언. (0, 1, 2, ... , 3499까지 선언)
 		System.out.println(nums[0]); // 0이 나온다면 선언 완료한 것임
 		
 		nums[3499] = 3499;
 		System.out.println(nums[3499]); // 위에서 3499 값 초기화해줘서 3499 출력
+		
+		int max = 35;
+		int[] nums2 = new int[max]; // [] 안에 int로 선언한 변수를 넣을 수도 있음
+		System.out.println(nums2[34]); // max=35 까지 선언했기 때문에 34는 선언 완료했으므로 0이 출력됨
+		System.out.println("nums2 max : "+nums2[nums2.length-1]); // 어떤 배열의 max값을 보고싶다면 .length-1 해주면 됨. .length는 max의 +1일 것이기 때문.
+		
+		// PC 100대 각각에 이름 넣기
+		String[] names2 = new String[100];
+		System.out.println(names2.length); // (배열변수).length : 변수의 갯수. 따라서 0~99의 100개 이므로 100 출력됨
+//		System.out.println(names2[100]); 은 에러뜸. 출력할 때 [n]은 n번째가 아닌 n 자체를 의미함. ex) names2 배열의 첫번째는 names2[0]
+		names2[0] = "00";
+		System.out.println(names2[0]);
+		
+		for (int i = 0; i < names2.length; i++) {
+//			System.out.print(i);
+			names2[i] = "PC : 인덱스 : "+i;
+			System.out.println(names2[i]);
+		}
+		
+		// 짝수 true, 홀수 false로 나타내기 예제
+		boolean[] bool = new boolean[35];
+		for (int i = 0; i < bool.length; i++) {
+			// 내가 써본 답
+//			if (i % 2 == 0) {
+//				bool[i] = true;
+//				System.out.println(i+" : "+bool[i]);
+//			}
+//			else {
+//				bool[i] = false;
+//				System.out.println(i+" : "+bool[i]);
+//			}
+			
+			// 도 맞지만 삼항연산자를 쓸 수도 있음
+			bool[i] = (i % 2 == 0) ? true:false;
+			System.out.println(i+" : "+bool[i]);
+				
+		}
+		
+		// 구구단 2단부터 9단까지 결과값 배열 사용 표현 예제
+		int[] a = new int[72];
+		
+		for (int i = 2; i < 10; i++) {
+			for (int j = 1; j < 10; j++) {
+				a[] = i*j;
+			}
+		}
+		
+		for (int i = 0; i < a.length; i++) {
+			System.out.println(a[i]);
+		}
 		
 	}
 
