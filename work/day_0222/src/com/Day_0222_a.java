@@ -132,18 +132,16 @@ public class Day_0222_a {
 		}
 		
 		// 구구단 2단부터 9단까지 결과값 배열 사용 표현 예제
+		System.out.println("구구단 2단~9단 예제");
 		int[] a = new int[72];
+		int b = 0;
 		
 		for (int i = 2; i < 10; i++) {
 			for (int j = 1; j < 10; j++) {
-				a[] = i*j;
+				a[b] = i*j;
+				System.out.println(a[b++]);
 			}
 		}
-		
-		for (int i = 0; i < a.length; i++) {
-			System.out.println(a[i]);
-		}
-		
 	}
 
 }
