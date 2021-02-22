@@ -141,6 +141,7 @@ public class Day_0222_a {
 				a[b] = i*j;
 				System.out.println(a[b++]);
 			}
+			
 		}
 	}
 
