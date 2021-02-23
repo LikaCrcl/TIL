@@ -1,5 +1,7 @@
 package com;
 
+import java.util.Iterator;
+
 public class Day_0223_a {
 	
 	static int a = 10;
@@ -28,12 +30,13 @@ public class Day_0223_a {
 		System.out.println("////");
 		System.out.println("0 : "+array[0]);
 		System.out.println("1 : "+array[1]); // 스왑한 그대로 바뀌어있음. 기본타입을 썼더라도 배열을 만나게 되면 참조로 바뀐다.
+		System.out.println("---");
 		
 		// 로또 만들기
 		int[] lotto = new int[45];
 		for (int i = 0; i < lotto.length; i++) {
 			
-			lotto[i] = i+1;
+			lotto[i] = i+1; // 0이 나오지 않게, 45가 출력될 수 있게 해주는 코드.
 			
 		}
 		
@@ -42,7 +45,7 @@ public class Day_0223_a {
 //			int n = (int) (Math.random()*44)+1;
 //			
 //			int temp = lotto[0];
-//			lotto[0] = lotto[n];
+//			lotto[0] = lotto[n]; // lotto[0] 부터 lotto[45]를 전부 섞어주는 코드.
 //			lotto[n] = temp;
 //			
 //		}
@@ -50,7 +53,7 @@ public class Day_0223_a {
 //		int lotto_max = 6;
 //		for (int i = 0; i < lotto_max; i++) {
 //			
-//			System.out.println(lotto[i]);
+//			System.out.println(lotto[i]); // lotto[0] ~ lotto[5]까지를 도출하는 코드. 위에서 계속 섞어주기 떄문에 랜덤한 값이 나온다.
 //			
 //		} 까지 첫번째 방법
 		
@@ -60,18 +63,45 @@ public class Day_0223_a {
 		
 		for (int i = 0; i < 6; i++) {
 			
-			int n = (int)(Math.random()*45);
+			int n = (int)(Math.random()*45+1);
+			random_index[i] = n;
+			
 			if (i == 0) {
-				random_index[0] = n;
 			}
 			else {
-				
+				for (int j = 0; j < i; j++) {
+					if (random_index[i] == random_index[j]) {
+						i--;
+						break;
+					}
+				}
 			}
-			System.out.println(n);
-			
 		}
 		
+		for (int i = 0; i < random_index.length; i++) {
+//			System.out.println(random_index[i]); // 위쪽 for문에서 값을 입력받고 난 후 따로 빠져나와 출력해줘야함.
+		}
 		
+		// * break; 는 가장 가까이 있는 반복문(for, while)을 나가며, 그 중간에 조건문(switch, if)이 있어도 무시한다.
+		
+		// 랜덤 10개 값 생성하여 높은 수가 아래로 오게끔 (오름차순) 정렬 과제
+		int[] random = new int[10];
+		
+		for (int i = 0; i < random.length; i++) {
+			random[i] = (int)(Math.random()*100);
+			if (i == 0) {
+				random[i] = (int)(Math.random()*10);
+			}
+			else {
+				if (random[i] < random[i-1]) {
+					i--;
+				}
+			}
+		}
+		
+		for (int i = 0; i < random.length; i++) {
+			System.out.println(random[i]);
+		}
 		
 	}
 	
