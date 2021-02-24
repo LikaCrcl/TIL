@@ -92,12 +92,11 @@ public class Day_0223_a {
 			if (i == 0) {
 				random[i] = (int)(Math.random()*10);
 			}
-			else {
-				if (random[i] < random[i-1]) {
+			else if (random[i] < random[i-1]) {
 					i--;
 				}
 			}
-		}
+		
 		
 		for (int i = 0; i < random.length; i++) {
 			System.out.println(random[i]);
