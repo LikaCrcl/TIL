@@ -56,12 +56,52 @@ public class Day_0224_a {
 			array_t[i] = new int[array_num[i]];
 			for (int j = 0; j < array_t[i].length; j++) {
 				array_t[i][j] = count++;
-				System.out.println(array_t[i][j]);
+//				System.out.println(array_t[i][j]);
 			}
 		}
 		
 		int size = 10;
-		int[][] array_3 = new int[size][size];
+		int[] array_num2 = {15,19,66,100,20,30,50,45,32,2};
+		int[][] array_3 = new int[size][];
+		int count2 = 0;
+		
+		for (int i = 0; i < array_3.length; i++) {
+			array_3[i] = new int[array_num2[i]]; // 2차 배열에서 1차에 대입할 때 기본형 기억해두기. array2[i] = new int[array1[i]];
+			for (int j = 0; j < array_3[i].length; j++) {
+				array_3[i][j] = count2;
+				System.out.print("["+count2+"]");
+				count2++;
+			}
+			System.out.println();
+		}
+		
+		// 배열로 15*15만들고 i, j=7일때만 1, 나머지 0 찍고 출력해본 다음 1일 때의 i j값 출력하기 예제
+		int size2 = 15;
+		int[][] work = new int[size2][size2];
+		
+		for (int i = 0; i < work.length; i++) {
+			for (int j = 0; j < work[i].length; j++) {
+				if (i == 7 && j == 7) {
+					work[i][j] = 1;
+				}
+			}
+		}
+		
+		for (int i = 0; i < work.length; i++) {
+			for (int j = 0; j < work[i].length; j++) {
+				System.out.print(work[i][j]);
+			}
+			System.out.println();
+		}
+		
+		for (int i = 0; i < work.length; i++) {
+			for (int j = 0; j < work[i].length; j++) {
+				if (work[i][j] == 1) {
+					System.out.println("i : "+i);
+					System.out.println("j : "+j);
+				}
+			}
+		}
 		
 	}
 
