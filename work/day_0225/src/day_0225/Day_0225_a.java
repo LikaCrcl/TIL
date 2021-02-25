@@ -1,5 +1,7 @@
 package day_0225;
 
+import java.util.Iterator;
+
 public class Day_0225_a {
 	
 	static int count; // 4byte. stack에 할당
@@ -12,7 +14,6 @@ public class Day_0225_a {
 		
 		// stack은 Last In First Out (lifo) <-> queue는 First In First Out (fifo)
 		
-		int num = 1919;
 		count = 1919;
 		System.out.println(count);
 		System.out.println(count2); // 전역변수의 우선순위가 더 높기 때문에 count2가 저 아래 있어도 여기서 사용 가능
@@ -38,6 +39,34 @@ public class Day_0225_a {
 		
 		System.out.println(array_2[0][0]); // 30
 		System.out.println(array_2[1][1]); // 60
+		
+		String name = "helloworld";
+		String name2 = "helloworld"; // 얘랑 name이랑 주소비교하면 true. 그냥 이렇게 선언하면 java에서 자동으로 heap에서 같은 값이 있나 찾아보고 같다면 같은 주소를 할당해줌
+		String name3 = new String("helloworld"); // 얘는 new를 써서 강제로 heap 내에 새로운 공간에 할당했기 때문에 주소가 다름. 그래서 false
+		
+		// 주소 비교
+		if (name == name3)
+			System.out.println("true");
+		else
+			System.out.println("false");
+		
+		name2 = name3; // 주소 비교하면 true나옴.
+		
+		if (name2 == name3)
+			System.out.println("true");
+		else
+			System.out.println("false");
+		// 참조타입은 비교 연산자를 사용하면 주소를 비교하지만 value type (ex. int, float 등)은 value를 비교함(주소가 어차피 같게 할당됨)
+		
+		// value 비교
+		System.out.println(name3.equals(name)); // value를 비교하는 함수 xxx.equals() -> boolean으로 출력됨. 따라서 true
+		
+		// String도 배열을 이용해 char로 나타낼 수 있음
+		char[] ch = name3.toCharArray();
+		System.out.println(ch.length); // "helloworld" 열 글자의 10
+		for (int i = 0; i < ch.length; i++) {
+			System.out.println(ch[i]);
+		}
 		
 	}
 	
