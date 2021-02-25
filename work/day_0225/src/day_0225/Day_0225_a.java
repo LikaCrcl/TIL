@@ -1,16 +1,15 @@
 package day_0225;
 
-import java.util.Iterator;
-
 public class Day_0225_a {
 	
 	static int count; // 4byte. stack에 할당
 
 	public static void main(String[] args) {
 		
-		// 기본타입 int, short, long, float 등은 stack이라는 공간에 할당받음. 속도 빠름 (콜백함수 main도 stack에 할당받음)
+		// 기본타입 int, short, long, float 등은 stack이라는 공간에 할당받음. 속도 빠르고 용량 작음 (콜백함수 main도 stack에 할당받음)
 		// 전역변수는 콜백함수보다 우선순위가 높음(콜백함수보다 먼저 할당받음. 이 main함수가 끝나고 그 다음에 선언해도 여기서 전역변수 사용 가능)
-		// 나머지 참조타입은 heap이라는 공간에 할당받음. 속도 느림
+		// 나머지 참조타입은 heap이라는 공간에 할당받음. 속도 느리고 용량 큼
+		// new를 쓰면 기본타입이라도 heap 에 강제로 할당시킴
 		
 		// stack은 Last In First Out (lifo) <-> queue는 First In First Out (fifo)
 		
@@ -65,10 +64,50 @@ public class Day_0225_a {
 		char[] ch = name3.toCharArray();
 		System.out.println(ch.length); // "helloworld" 열 글자의 10
 		for (int i = 0; i < ch.length; i++) {
-			System.out.println(ch[i]);
+//			System.out.println(ch[i]);
 		}
 		
-	}
+		// 2차배열, for문 사용하여 구구단 2단~9단의 형식과 결과값을 모두 문자열로 저장하기 예제
+		System.out.printf("\n%S\n\n", "구구단 예제");
+		String[][] print = new String[8][9];
+		String[] gugudan = new String[72];
+		int count = 0;
+		
+		for (int i = 2; i < 10; i++) {
+			for (int j = 1; j < 10; j++) {
+				gugudan[count++] = i+"*"+j+"="+(i*j);
+			}
+		}
+		
+		count = 0;
+		
+		for (int i = 0; i < print.length; i++) {
+			for (int j = 0; j < print[i].length; j++) {
+				print[i][j] = gugudan[count++];
+//				System.out.println(print[i][j]);
+			}
+		}
+
+		// String 2차 배열의 값들을 char[][]에 넣기 예제
+		// 못 풀었는데 답을 안알려줌 시발뭐지
+		char[][] chgugu = new char[8][];
+		
+		for (int i = 0; i < print.length; i++) {
+			for (int j = 0; j < print[i].length; j++) {
+				chgugu[i] = print[i][j].toCharArray(); // 여기서 chgugu[i]에 print[i][j]가 대입될 때 덮어씌워져서 j의 마지막 값인 *9만 출력되는 것 같음. 덮어씌워지지 않게 대입하는 법을 찾아야 할듯
+			}
+		}
+		
+		for (int i = 0; i < chgugu.length; i++) {
+				System.out.print(chgugu[i]);
+				System.out.println();
+		}
+		
+		
+		
+		}
+		
+	
 	
 	static void test() {
 		int test_num = 1919;
