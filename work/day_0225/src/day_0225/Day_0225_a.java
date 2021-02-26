@@ -103,11 +103,8 @@ public class Day_0225_a {
 				System.out.println();
 		}
 		
-		
-		
 		}
-		
-	
+			
 	
 	static void test() {
 		int test_num = 1919;
