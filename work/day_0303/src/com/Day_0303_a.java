@@ -6,7 +6,7 @@ public class Day_0303_a {
 
 	public static void main(String[] args) {
 		
-		// collections framework
+		// collections framework - list, set, map
 		// list 중 ArrayList.
 		// ArrayList<참조타입> (변수) = new ArrayList<참조타입>();
 		int[] array_count = new int[9];
@@ -157,8 +157,6 @@ public class Day_0303_a {
 		// all remove -> XXX.clear();
 		new_list.clear();
 		System.out.println("after clear : "+new_list); // []
-		
-		
 		
 	}
 
