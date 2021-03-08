@@ -39,10 +39,18 @@ public class Day_0308_a {
 		
 		count = 0;
 		
+		// 다시 String 변수에 넣고 접미사로 ; 가 오게 하기 예제 인데 뭔 개소린지 씨발존나모르겠다
+		
+		String b = "";
+		
 		for (int i = 0; i < a.length; i++) {
-			System.out.println(a[i]);
+//			System.out.println(a[i]);
+			b += a[i]+";";
 		}
-
+		
+		System.out.println(b);
+		
+				
 	}
 
 }
