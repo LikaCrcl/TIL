@@ -1,6 +1,7 @@
 package com;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Day_0310_a {
 
@@ -81,27 +82,30 @@ public class Day_0310_a {
 		
 		System.out.println(list_str);
 		
+		// LinkedList
+		LinkedList<Integer> list_int_link = new LinkedList<Integer>();
+		ArrayList<Integer> list_int_arr = new ArrayList<Integer>();
+		
+		double start_time = System.currentTimeMillis();
+		
+		for (int i = 0; i < 1E5; i++) {
+//			list_int_link.add(i);
+			list_int_arr.add(i);
+//			System.out.println(i);
+		}
+		
+		for (int i = 0; i < 1E5; i++) {
+//			list_int_link.remove(0);
+			list_int_arr.remove(0);
+			System.out.println(i);
+		}
+		
+		double end_time = System.currentTimeMillis();
+		System.out.println();
+		System.out.println(end_time - start_time);
+		
+		// add 할 때엔 ArrayList가, remove할 땐 LinkedList가 더 빠름. add할 일이 많을 땐 arraylist, remove할 일이 많을 땐 linkedlist를 쓰자
+		
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
