@@ -37,7 +37,7 @@ public class Day_0310_a {
 		list_string2.add(new ArrayList<String>());
 		list_string2.add(list_string); // 2차니까 1차를 add해줄 수 있음
 		
-		System.out.println("list_string2[0] : "+list_string2.get(0)); // 0번 방의 모든 값 출력
+		System.out.println("list_string2[0] : "+list_string2.get(0)); // 0번 방의 모든 값 출력. 대괄호는 내가 이해하기 쉬울라고 쓴 것이고 정식 표기는 아님
 		System.out.println("list_string2[1] : "+list_string2.get(1)); // 1번 방의 ~~
 		
 		System.out.println("list_string2.size() : "+list_string2.size()); // list_string2에 add한 건 2번이라서 2
@@ -48,6 +48,60 @@ public class Day_0310_a {
 		
 		System.out.println("list_test : "+list_test);
 		
+		// 2차 ArrayList 이용 구구단 예제
+		ArrayList<ArrayList<Integer>> list_gugudan = new ArrayList<ArrayList<Integer>>();
+		ArrayList<Integer> asdf = new ArrayList<Integer>();
+		
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 9; j++) {
+				asdf.add((i+2)*(j+1));
+			}
+			list_gugudan.add(asdf);
+			asdf = new ArrayList<Integer>(); // 이거 안해주면 위 j for문에서 add한 값들이 전부 쌓임. new를 써서 주소를 새로 할당해줘야 했음
+		}
+		
+		for (int i = 0; i < list_gugudan.size(); i++) {
+			for (int j = 0; j < list_gugudan.get(i).size(); j++) {
+//				System.out.println(list_gugudan.get(i).get(j));
+			}
+			System.out.println();
+		}
+		
+		// list_gugudan 값들을 다시 꺼내서 2차 String list에 구구단 형식으로 넣기 예제
+		ArrayList<ArrayList<String>> list_str = new ArrayList<ArrayList<String>>();
+		ArrayList<String> data_gugu = new ArrayList<String>();
+		
+		for (int i = 0; i < list_gugudan.size(); i++) {
+			for (int j = 0; j < list_gugudan.get(i).size(); j++) {
+				data_gugu.add((i+2)+"*"+(j+1)+"="+list_gugudan.get(i).get(j));
+			}
+			list_str.add(data_gugu);
+			data_gugu = new ArrayList<String>();
+		}
+		
+		System.out.println(list_str);
+		
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
