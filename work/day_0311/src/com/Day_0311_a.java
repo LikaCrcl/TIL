@@ -1,7 +1,11 @@
 package com;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.TreeSet;
 
 public class Day_0311_a {
 
@@ -21,11 +25,10 @@ public class Day_0311_a {
 		int[] c = new int[max];
 		String[] names = new String[max];
 		ArrayList<Integer> list_int = new ArrayList<Integer>();
-		HashSet<Integer> set_int = new HashSet<Integer>();
 		Start[] array_start = new Start[max];
 		ArrayList<Start> list_start = new ArrayList<Start>();
 		
-		for (int i = 0; i < 30; i++) {
+		for (int i = 0; i < max; i++) {
 			pc = new Start();
 			pc.name = "pc_"+i;
 			pc.number = i;
@@ -56,19 +59,134 @@ public class Day_0311_a {
 		}
 		
 		for (int i = 0; i < array_start.length; i++) {
+			// 객체배열출력
 //			System.out.println("name : "+array_start[i].name);
 //			System.out.println("number : "+array_start[i].number);
 //			System.out.println("size : "+array_start[i].size);
 //			System.out.println("power : "+array_start[i].power);
 //			System.out.println();
 			
+			// 객체List출력
 			Start z = list_start.get(i); // 이렇게 간소화? 하는게 좋음
 			
-			System.out.println("name : "+z.name);
-			System.out.println("number : "+z.number);
-			System.out.println("size : "+z.size);
-			System.out.println("power : "+z.power);
+//			System.out.println("name : "+z.name);
+//			System.out.println("number : "+z.number);
+//			System.out.println("size : "+z.size);
+//			System.out.println("power : "+z.power);
+//			System.out.println();
+		}
+		
+		// set(HashSet, LinkedHashSet, TreeSet)
+		HashSet<Integer> set_int = new HashSet<Integer>();
+		
+		set_int.add(100);
+		set_int.add(100);
+		set_int.add(100);
+		set_int.add(100);
+		
+		System.out.println("set_int.size before : "+set_int.size()); // 1 출력. 중복 허용 X
+		
+		set_int.add(200);
+		set_int.add(400);
+		set_int.add(5940);
+		
+		System.out.println("set_int.size after : "+set_int.size()); // 다른 값 add했으므로 2
+		
+		// Set 들은 get을 사용할 수 없어서 for each문으로 출력해야함		
+		for(int i : set_int) {
+			System.out.println("for each HashSet : "+i); // 400, 100, 5940, 200 순으로 나옴. HashSet은 add 해주면 순서대로 입력되는 것이 아니고 랜덤으로 입력되어 정확한 순서를 알 수 없음(get을 할 수 없음)
+		}
+		
+		LinkedHashSet<Integer> link_int = new LinkedHashSet<Integer>();
+		
+		link_int.add(100);
+		link_int.add(100);
+		link_int.add(100);
+		link_int.add(100);
+		
+		System.out.println("link_int size : "+link_int.size()); // 1 출력. 여전히 중복 X
+		
+		link_int.add(200);
+		link_int.add(300);
+		link_int.add(124089);
+		link_int.add(5823);
+		link_int.add(235);
+		link_int.add(652);
+		link_int.add(346);
+				
+		for (int i : link_int) {
+			System.out.println("for each LinkedHashSet : "+i);
+		}
+		
+		TreeSet<String> treeSet = new TreeSet<String>();
+		
+		treeSet.add("aaa");
+		treeSet.add("ccc");
+		treeSet.add("가");
+		treeSet.add("ee");
+		treeSet.add("다");
+		treeSet.add("b");
+		treeSet.add("나");
+		treeSet.add("ddd");
+		treeSet.add("hhh");
+		
+		for (String i : treeSet) {
+			System.out.println(i); // TreeSet은 입력값들을 자연적 순서대로 정렬해줌.
+		}
+		
+		HashSet<Start> hash_start = new HashSet<Start>();
+		LinkedHashSet<Start> link_start = new LinkedHashSet<Start>();
+		TreeSet<Start> tree_start = new TreeSet<Start>();
+		
+		for (int i = 0; i < max; i++) {
+			// 위로 가기 애매해서 여기서 다시 씀
+			pc = new Start();
+			
+			pc.name = "pc_"+i;
+			pc.number = i;
+			pc.size = 27;
+			pc.power = true;
+			// 다시 HashSet으로 pc 출력해보기 예제
+			hash_start.add(pc);
+			
+			// LinkedHashSet
+			link_start.add(pc);
+		}
+		
+		for (Start i : hash_start) {
+//			System.out.println("name : "+i.name);
+//			System.out.println("number : "+i.number);
+//			System.out.println("size : "+i.size);
+//			System.out.println("power : "+i.power);
+//			System.out.println();
+		}
+		
+		for (Start i : link_start) {
+			System.out.println("name : "+i.name);
+			System.out.println("number : "+i.number);
+			System.out.println("size : "+i.size);
+			System.out.println("power : "+i.power);
 			System.out.println();
+		}
+		
+		// 궁금해서 실험좀 해봤는데 max값이 늘어나서 새로운 값이 추가되면 전체 순서가 다 바뀌는건 아니고 랜덤으로 배정된 그 배열은 놔두고 배열 사이 어딘가로 낑김
+		
+		// Map ( HashMap<(Key), (Value)> )
+		HashMap<Integer, String> map_hash = new HashMap<Integer, String>();
+		
+		map_hash.put(100, "hi");
+		map_hash.put(200, "hi"); // key 값은 중복 불허용. value는 중복 가능. hash라서 중복 거르는듯
+		
+		map_hash.put(100, "fuck you"); // 중복 발생 시 마지막에 추가해 준 value 반환
+		
+		System.out.println("key 100 : "+map_hash.get(100)); // get 안의 key 값에 대한 value 반환
+		
+		System.out.println("HashMap size : "+map_hash.size()); // 설정해준 key의 갯수가 곧 size
+		System.out.println("HashMap keyset : "+map_hash.keySet()); // 배열로 출력됨
+		
+		for (int i : map_hash.keySet()) {
+			System.out.println("key : "+i);
+			System.out.println("value : "+map_hash.get(i));
 		}
 		
 	}
