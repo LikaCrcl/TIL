@@ -17,7 +17,7 @@ import java.awt.Color;
 public class Kiosk {
 	
 	private JFrame frame;
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -44,7 +44,7 @@ public class Kiosk {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 500, 700);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -121,7 +121,7 @@ public class Kiosk {
 		lblOptionMsg.setBounds(12, 141, 134, 52);
 		panelSelectMenu.add(lblOptionMsg);
 		
-		ArrayList<JButton> menu_list = new ArrayList<>();
+		ArrayList<JButton> menu_list = new ArrayList<JButton>();
 		
 		JButton btn_menuDummy1 = new JButton("\uBA54\uB274 1");
 		menu_list.add(btn_menuDummy1);
@@ -137,18 +137,6 @@ public class Kiosk {
 		menu_list.add(btn_menuDummy3);
 		btn_menuDummy3.setBounds(317, 73, 111, 99);
 		panelMenuDummy.add(btn_menuDummy3);
-		
-		Num num = new Num();
-		
-		for (num.menulist = 0; num.menulist < menu_list.size(); num.menulist++) {
-			menu_list.get(num.menulist).addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					panelMenuDummy.setVisible(false);
-					panelSelectMenu.setVisible(true);
-					lblMenuNameMsg.setText(menu_list.get(num.menulist).getText());
-				}
-			});
-		}
 		
 		JButton btn_addOption = new JButton("\uCD94\uAC00");
 		btn_addOption.addActionListener(new ActionListener() {
@@ -195,6 +183,18 @@ public class Kiosk {
 		btn_setIced.setBounds(158, 82, 124, 52);
 		panelSelectMenu.add(btn_setIced);
 
+	}
+	
+	public void setLblMenuName() {
+		for (i = 0; i < menu_list.size(); i++) {
+			menu_list.get(i).addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+						panelMenuDummy.setVisible(false);
+						panelSelectMenu.setVisible(true);
+						lblMenuNameMsg.setText(menu_list.get(i).getText());
+				}
+			});
+		}
 	}
 
 }
