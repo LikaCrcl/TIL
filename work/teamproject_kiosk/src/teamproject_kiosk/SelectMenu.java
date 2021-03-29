@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.JComboBox;
@@ -13,7 +16,11 @@ import javax.swing.JProgressBar;
 import javax.swing.JFormattedTextField;
 import javax.swing.JSpinner;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JCheckBox;
+import javax.swing.JRadioButton;
 
 public class SelectMenu {
 
@@ -100,22 +107,22 @@ public class SelectMenu {
 		btn_selectComplete.setBounds(342, 588, 130, 63);
 		panelSelectMenu.add(btn_selectComplete);
 		
-		JButton btn_setHot = new JButton("Hot");
-		btn_setHot.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				// 이 패널 위쪽 메뉴명, confirm 패널 메뉴명에 (HOT) 추가
-			}
-		});
-		btn_setHot.setBounds(22, 82, 124, 52);
-		panelSelectMenu.add(btn_setHot);
+		ButtonGroup rdbtnSlctMenu = new ButtonGroup();
 		
-		JButton btn_setIced = new JButton("Iced");
-		btn_setIced.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				// 이 패널 위쪽 메뉴명, confirm 패널 메뉴명에 (ICED) 추가
-			}
-		});
-		btn_setIced.setBounds(158, 82, 124, 52);
-		panelSelectMenu.add(btn_setIced);
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Hot");
+		rdbtnNewRadioButton.setBounds(35, 94, 49, 23);
+		panelSelectMenu.add(rdbtnNewRadioButton);
+		
+		JRadioButton rdbtnIced = new JRadioButton("Iced");
+		rdbtnIced.setBounds(88, 94, 58, 23);
+		panelSelectMenu.add(rdbtnIced);
+		
+		rdbtnSlctMenu.add(rdbtnNewRadioButton);
+		rdbtnSlctMenu.add(rdbtnIced);
+		
+		JRadioButton rdbtnClear = new JRadioButton("radio button to clear");
+		
+		rdbtnSlctMenu.add(rdbtnClear);
+		
 	}
 }

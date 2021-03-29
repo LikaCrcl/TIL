@@ -80,127 +80,85 @@ public class Confirm2 {
 		JLabel lblSelectedMenuName_8 = new JLabel("");
 		confirmlbl_list.add(lblSelectedMenuName_8);
 		lblSelectedMenuName_8.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSelectedMenuName_8.setBounds(12, 65, 172, 45);
+		lblSelectedMenuName_8.setBounds(12, 65, 213, 45);
 		panelConfirmPage2.add(lblSelectedMenuName_8);
-		
-		JLabel lblMenuQuantity_8 = new JLabel("");
-		confirmlbl_list.add(lblMenuQuantity_8);
-		lblMenuQuantity_8.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuQuantity_8.setBounds(196, 65, 96, 45);
-		panelConfirmPage2.add(lblMenuQuantity_8);
 		
 		JLabel lblMenuPrice_8 = new JLabel("");
 		confirmlbl_list.add(lblMenuPrice_8);
 		lblMenuPrice_8.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuPrice_8.setBounds(304, 65, 168, 45);
+		lblMenuPrice_8.setBounds(268, 65, 204, 45);
 		panelConfirmPage2.add(lblMenuPrice_8);
 		
 		JLabel lblSelectedMenuName_9 = new JLabel("");
 		confirmlbl_list.add(lblSelectedMenuName_9);
 		lblSelectedMenuName_9.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSelectedMenuName_9.setBounds(12, 120, 172, 45);
+		lblSelectedMenuName_9.setBounds(12, 120, 213, 45);
 		panelConfirmPage2.add(lblSelectedMenuName_9);
-		
-		JLabel lblMenuQuantity_9 = new JLabel("");
-		confirmlbl_list.add(lblMenuQuantity_9);
-		lblMenuQuantity_9.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuQuantity_9.setBounds(196, 120, 96, 45);
-		panelConfirmPage2.add(lblMenuQuantity_9);
 		
 		JLabel lblMenuPrice_9 = new JLabel("");
 		confirmlbl_list.add(lblMenuPrice_9);
 		lblMenuPrice_9.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuPrice_9.setBounds(304, 120, 168, 45);
+		lblMenuPrice_9.setBounds(268, 120, 204, 45);
 		panelConfirmPage2.add(lblMenuPrice_9);
 		
 		JLabel lblSelectedMenuName_10 = new JLabel("");
 		confirmlbl_list.add(lblSelectedMenuName_10);
 		lblSelectedMenuName_10.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSelectedMenuName_10.setBounds(12, 173, 172, 45);
+		lblSelectedMenuName_10.setBounds(12, 173, 213, 45);
 		panelConfirmPage2.add(lblSelectedMenuName_10);
-		
-		JLabel lblMenuQuantity_10 = new JLabel("");
-		confirmlbl_list.add(lblMenuQuantity_10);
-		lblMenuQuantity_10.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuQuantity_10.setBounds(196, 173, 96, 45);
-		panelConfirmPage2.add(lblMenuQuantity_10);
 		
 		JLabel lblMenuPrice_10 = new JLabel("");
 		confirmlbl_list.add(lblMenuPrice_10);
 		lblMenuPrice_10.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuPrice_10.setBounds(304, 173, 168, 45);
+		lblMenuPrice_10.setBounds(268, 173, 204, 45);
 		panelConfirmPage2.add(lblMenuPrice_10);
 		
 		JLabel lblSelectedMenuName_11 = new JLabel("");
 		confirmlbl_list.add(lblSelectedMenuName_11);
 		lblSelectedMenuName_11.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSelectedMenuName_11.setBounds(12, 228, 172, 45);
+		lblSelectedMenuName_11.setBounds(12, 228, 213, 45);
 		panelConfirmPage2.add(lblSelectedMenuName_11);
-		
-		JLabel lblMenuQuantity_11 = new JLabel("");
-		confirmlbl_list.add(lblMenuQuantity_11);
-		lblMenuQuantity_11.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuQuantity_11.setBounds(196, 228, 96, 45);
-		panelConfirmPage2.add(lblMenuQuantity_11);
 		
 		JLabel lblMenuPrice_11 = new JLabel("");
 		confirmlbl_list.add(lblMenuPrice_11);
 		lblMenuPrice_11.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuPrice_11.setBounds(304, 228, 168, 45);
+		lblMenuPrice_11.setBounds(268, 228, 204, 45);
 		panelConfirmPage2.add(lblMenuPrice_11);
 		
 		JLabel lblSelectedMenuName_12 = new JLabel("");
 		confirmlbl_list.add(lblSelectedMenuName_12);
 		lblSelectedMenuName_12.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSelectedMenuName_12.setBounds(12, 283, 172, 45);
+		lblSelectedMenuName_12.setBounds(12, 283, 213, 45);
 		panelConfirmPage2.add(lblSelectedMenuName_12);
-		
-		JLabel lblMenuQuantity_12 = new JLabel("");
-		confirmlbl_list.add(lblMenuQuantity_12);
-		lblMenuQuantity_12.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuQuantity_12.setBounds(196, 283, 96, 45);
-		panelConfirmPage2.add(lblMenuQuantity_12);
 		
 		JLabel lblMenuPrice_12 = new JLabel("");
 		confirmlbl_list.add(lblMenuPrice_12);
 		lblMenuPrice_12.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuPrice_12.setBounds(304, 283, 168, 45);
+		lblMenuPrice_12.setBounds(268, 283, 204, 45);
 		panelConfirmPage2.add(lblMenuPrice_12);
 		
 		JLabel lblSelectedMenuName_13 = new JLabel("");
 		confirmlbl_list.add(lblSelectedMenuName_13);
 		lblSelectedMenuName_13.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSelectedMenuName_13.setBounds(12, 338, 172, 45);
+		lblSelectedMenuName_13.setBounds(12, 338, 213, 45);
 		panelConfirmPage2.add(lblSelectedMenuName_13);
-		
-		JLabel lblMenuQuantity_13 = new JLabel("");
-		confirmlbl_list.add(lblMenuQuantity_13);
-		lblMenuQuantity_13.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuQuantity_13.setBounds(196, 338, 96, 45);
-		panelConfirmPage2.add(lblMenuQuantity_13);
 		
 		JLabel lblMenuPrice_13 = new JLabel("");
 		confirmlbl_list.add(lblMenuPrice_13);
 		lblMenuPrice_13.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuPrice_13.setBounds(304, 338, 168, 45);
+		lblMenuPrice_13.setBounds(268, 338, 204, 45);
 		panelConfirmPage2.add(lblMenuPrice_13);
 		
 		JLabel lblSelectedMenuName_14 = new JLabel("");
 		confirmlbl_list.add(lblSelectedMenuName_14);
 		lblSelectedMenuName_14.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSelectedMenuName_14.setBounds(12, 393, 172, 45);
+		lblSelectedMenuName_14.setBounds(12, 393, 213, 45);
 		panelConfirmPage2.add(lblSelectedMenuName_14);
-		
-		JLabel lblMenuQuantity_14 = new JLabel("");
-		confirmlbl_list.add(lblMenuQuantity_14);
-		lblMenuQuantity_14.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuQuantity_14.setBounds(196, 393, 96, 45);
-		panelConfirmPage2.add(lblMenuQuantity_14);
 		
 		JLabel lblMenuPrice_14 = new JLabel("");
 		confirmlbl_list.add(lblMenuPrice_14);
 		lblMenuPrice_14.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuPrice_14.setBounds(304, 393, 168, 45);
+		lblMenuPrice_14.setBounds(268, 393, 204, 45);
 		panelConfirmPage2.add(lblMenuPrice_14);
 		
 		JLabel lblPriceSumName2 = new JLabel("\uACB0\uC81C \uAE08\uC561");

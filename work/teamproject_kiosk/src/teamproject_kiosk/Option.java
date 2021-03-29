@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Option {
 
@@ -66,6 +68,10 @@ public class Option {
 		panelOption.add(chckbxAddShot);
 		
 		JButton btn_optionCancel = new JButton("\uCDE8\uC18C");
+		btn_optionCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btn_optionCancel.setBounds(12, 588, 130, 63);
 		panelOption.add(btn_optionCancel);
 		
