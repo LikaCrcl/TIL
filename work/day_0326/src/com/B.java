@@ -9,7 +9,7 @@ public class B extends A {
 	@Override
 	void a() {
 		
-		Calendar ca = Calendar.getInstance();
+		Calendar cal = Calendar.getInstance();
 		System.out.println(cal);
 		
 	}

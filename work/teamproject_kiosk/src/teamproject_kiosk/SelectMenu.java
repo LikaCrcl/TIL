@@ -82,23 +82,23 @@ public class SelectMenu {
 		btn_addOption.setBounds(344, 141, 128, 52);
 		panelSelectMenu.add(btn_addOption);
 		
-		JButton btn_cancel = new JButton("\uCDE8\uC18C");
-		btn_cancel.addActionListener(new ActionListener() {
+		JButton btn_selectCancel = new JButton("\uCDE8\uC18C");
+		btn_selectCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// 이 메뉴 추가 안 시키고 메뉴화면 출력
 			}
 		});
-		btn_cancel.setBounds(12, 588, 130, 63);
-		panelSelectMenu.add(btn_cancel);
+		btn_selectCancel.setBounds(12, 588, 130, 63);
+		panelSelectMenu.add(btn_selectCancel);
 		
-		JButton btn_complete = new JButton("\uC120\uD0DD\uC644\uB8CC");
-		btn_complete.addActionListener(new ActionListener() {
+		JButton btn_selectComplete = new JButton("\uC120\uD0DD\uC644\uB8CC");
+		btn_selectComplete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// 이 메뉴 추가 시키고 메뉴화면 출력
 			}
 		});
-		btn_complete.setBounds(342, 588, 130, 63);
-		panelSelectMenu.add(btn_complete);
+		btn_selectComplete.setBounds(342, 588, 130, 63);
+		panelSelectMenu.add(btn_selectComplete);
 		
 		JButton btn_setHot = new JButton("Hot");
 		btn_setHot.addActionListener(new ActionListener() {

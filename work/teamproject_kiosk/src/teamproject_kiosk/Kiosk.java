@@ -15,9 +15,8 @@ import javax.swing.JLabel;
 import java.awt.Color;
 
 public class Kiosk {
-
+	
 	private JFrame frame;
-	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -41,7 +40,7 @@ public class Kiosk {
 	public Kiosk() {
 		initialize();
 	}
-
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -61,20 +60,29 @@ public class Kiosk {
 		
 		JPanel panelMenuDummy = new JPanel();
 		panel_list.add(panelMenuDummy);
-		panelMenuDummy.setLayout(null);
 		panelMenuDummy.setBounds(0, 0, 484, 661);
 		frame.getContentPane().add(panelMenuDummy);
+		panelMenuDummy.setLayout(null);
 		
 		JPanel panelSelectMenu = new JPanel();
 		panel_list.add(panelSelectMenu);
-		panelSelectMenu.setLayout(null);
 		panelSelectMenu.setBounds(0, 0, 484, 661);
 		frame.getContentPane().add(panelSelectMenu);
-		
+		panelSelectMenu.setLayout(null);
+		// 이 위로 패널코드 추가
 		for (int i = 0; i < panel_list.size(); i++) {
 			panel_list.get(i).setVisible(false);
 		}
 		panelMain.setVisible(true);
+		
+		JButton btn_nextDummy = new JButton("\uB2E4\uC74C");
+		btn_nextDummy.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// 주문확인 화면 출력
+			}
+		});
+		btn_nextDummy.setBounds(317, 589, 130, 63);
+		panelMenuDummy.add(btn_nextDummy);
 		
 		JButton btn_hall = new JButton("\uB9E4\uC7A5\uC5D0\uC11C \uBA39\uACE0 \uAC00\uC694");
 		btn_hall.addActionListener(new ActionListener() {
@@ -96,74 +104,96 @@ public class Kiosk {
 		btn_takeOut.setBounds(249, 150, 189, 319);
 		panelMain.add(btn_takeOut);
 		
-		JButton btn_nextDummy = new JButton("\uB2E4\uC74C");
-		btn_nextDummy.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				panelMenuDummy.setVisible(false);
-				panelSelectMenu.setVisible(true);
-			}
-		});
-		btn_nextDummy.setBounds(317, 589, 155, 62);
-		panelMenuDummy.add(btn_nextDummy);
+		JLabel lblMenuNameMsg = new JLabel("\uBA54\uB274 \uC774\uB984 \uD45C\uC2DC");
+		lblMenuNameMsg.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMenuNameMsg.setBounds(12, 10, 460, 62);
+		panelSelectMenu.add(lblMenuNameMsg);
 		
-		textField = new JTextField();
-		textField.setText("\uBA54\uB274");
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setColumns(10);
-		textField.setBounds(12, 10, 460, 550);
-		panelMenuDummy.add(textField);
-		
-		JLabel lblMenuName = new JLabel("menu name");
-		lblMenuName.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMenuName.setBounds(12, 10, 460, 62);
-		panelSelectMenu.add(lblMenuName);
-		
-		JLabel lblDefaultCount = new JLabel("1");
-		lblDefaultCount.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDefaultCount.setBounds(58, 82, 48, 38);
-		panelSelectMenu.add(lblDefaultCount);
-		
-		JButton btn_minus = new JButton("-");
-		btn_minus.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btn_minus.setBounds(22, 82, 41, 41);
-		panelSelectMenu.add(btn_minus);
-		
-		JButton btn_plus = new JButton("+");
-		btn_plus.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btn_plus.setBounds(105, 82, 41, 41);
-		panelSelectMenu.add(btn_plus);
-		
-		JLabel lblMenuPrice = new JLabel("menu price");
-		lblMenuPrice.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblMenuPrice.setBounds(239, 82, 204, 38);
+		JLabel lblMenuPrice = new JLabel("\uBA54\uB274 \uAC00\uACA9 \uD45C\uC2DC");
+		lblMenuPrice.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMenuPrice.setBounds(302, 82, 170, 49);
 		panelSelectMenu.add(lblMenuPrice);
 		
-		JLabel lblOption = new JLabel("\uC635\uC158");
-		lblOption.setHorizontalAlignment(SwingConstants.CENTER);
-		lblOption.setForeground(Color.BLACK);
-		lblOption.setBackground(Color.BLACK);
-		lblOption.setBounds(12, 130, 134, 52);
-		panelSelectMenu.add(lblOption);
+		JLabel lblOptionMsg = new JLabel("\uC635\uC158");
+		lblOptionMsg.setBackground(Color.BLACK);
+		lblOptionMsg.setForeground(Color.BLACK);
+		lblOptionMsg.setHorizontalAlignment(SwingConstants.CENTER);
+		lblOptionMsg.setBounds(12, 141, 134, 52);
+		panelSelectMenu.add(lblOptionMsg);
+		
+		ArrayList<JButton> menu_list = new ArrayList<>();
+		
+		JButton btn_menuDummy1 = new JButton("\uBA54\uB274 1");
+		menu_list.add(btn_menuDummy1);
+		btn_menuDummy1.setBounds(38, 73, 111, 99);
+		panelMenuDummy.add(btn_menuDummy1);
+		
+		JButton btn_menuDummy2 = new JButton("\uBA54\uB274 2");
+		menu_list.add(btn_menuDummy2);
+		btn_menuDummy2.setBounds(180, 73, 111, 99);
+		panelMenuDummy.add(btn_menuDummy2);
+		
+		JButton btn_menuDummy3 = new JButton("\uBA54\uB274 3");
+		menu_list.add(btn_menuDummy3);
+		btn_menuDummy3.setBounds(317, 73, 111, 99);
+		panelMenuDummy.add(btn_menuDummy3);
+		
+		Num num = new Num();
+		
+		for (num.menulist = 0; num.menulist < menu_list.size(); num.menulist++) {
+			menu_list.get(num.menulist).addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					panelMenuDummy.setVisible(false);
+					panelSelectMenu.setVisible(true);
+					lblMenuNameMsg.setText(menu_list.get(num.menulist).getText());
+				}
+			});
+		}
 		
 		JButton btn_addOption = new JButton("\uCD94\uAC00");
-		btn_addOption.setBounds(344, 130, 128, 52);
+		btn_addOption.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// option 패널 표시
+			}
+		});
+		btn_addOption.setBounds(344, 141, 128, 52);
 		panelSelectMenu.add(btn_addOption);
 		
-		JButton btn_cancel = new JButton("\uCDE8\uC18C");
-		btn_cancel.setBounds(12, 579, 204, 72);
-		panelSelectMenu.add(btn_cancel);
+		JButton btn_selectCancel = new JButton("\uCDE8\uC18C");
+		btn_selectCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// 이 메뉴 추가 안 시키고 메뉴화면 출력
+			}
+		});
+		btn_selectCancel.setBounds(12, 588, 130, 63);
+		panelSelectMenu.add(btn_selectCancel);
 		
-		JButton btn_finish = new JButton("\uC120\uD0DD\uC644\uB8CC");
-		btn_finish.setBounds(268, 579, 204, 72);
-		panelSelectMenu.add(btn_finish);
+		JButton btn_selectComplete = new JButton("\uC120\uD0DD\uC644\uB8CC");
+		btn_selectComplete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// 이 메뉴 추가 시키고 메뉴화면 출력
+			}
+		});
+		btn_selectComplete.setBounds(342, 588, 130, 63);
+		panelSelectMenu.add(btn_selectComplete);
+		
+		JButton btn_setHot = new JButton("Hot");
+		btn_setHot.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// 이 패널 위쪽 메뉴명, confirm 패널 메뉴명에 (HOT) 추가
+			}
+		});
+		btn_setHot.setBounds(22, 82, 124, 52);
+		panelSelectMenu.add(btn_setHot);
+		
+		JButton btn_setIced = new JButton("Iced");
+		btn_setIced.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// 이 패널 위쪽 메뉴명, confirm 패널 메뉴명에 (ICED) 추가
+			}
+		});
+		btn_setIced.setBounds(158, 82, 124, 52);
+		panelSelectMenu.add(btn_setIced);
 
 	}
 
