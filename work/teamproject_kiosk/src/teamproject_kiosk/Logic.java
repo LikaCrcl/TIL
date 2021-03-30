@@ -20,5 +20,40 @@ public class Logic {
 			}
 		});
 	}
+	
+	int i = 0;
+	
+	public void ConfirmLabelSet(ArrayList<JLabel> a, JLabel b) {
+		a.get(i).setText(b.getText());
+		i++;
+	}
+	
+	public void ConfirmLabelClear() {
+		i = 0;
+	}
+	
+	public void Clear(ArrayList<JLabel> a, JLabel b, ArrayList<JLabel> c) {
+		for (int i = 0; i < a.size(); i++) {
+			a.get(i).setText("");
+		}
+		ConfirmLabelClear();
+		b.setText("");
+		for (int i = 0; i < c.size(); i++) {
+			c.get(i).setText("");
+		}
+	}
+	
+	public void FinishClear(ArrayList<JLabel> a, JLabel b, ArrayList<JLabel> c, JLabel d) {
+		for (int i = 0; i < a.size(); i++) {
+			a.get(i).setText("");
+		}
+		ConfirmLabelClear();
+		b.setText("");
+		for (int i = 0; i < c.size(); i++) {
+			c.get(i).setText("");
+		}
+		d.setText("0");
+	}
+	
 }
 

@@ -84,7 +84,6 @@ public class Confirm {
 		panelConfirmPage1.add(lblSelectedMenuName_1);
 		
 		JLabel lblMenuPrice_1 = new JLabel(""/*선택한 메뉴1 가격*/);
-		lblMenuPrice_1.setText(1413+"");
 		confirmlbl_list.add(lblMenuPrice_1);
 		lblMenuPrice_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMenuPrice_1.setBounds(268, 65, 204, 45);
@@ -182,13 +181,15 @@ public class Confirm {
 		});
 		btn_confirm1NextPage.setBounds(206, 448, 86, 33);
 		panelConfirmPage1.add(btn_confirm1NextPage);
-		
+				
 		JButton btn_confirm1Clear = new JButton("\uC804\uCCB4 \uCDE8\uC18C");
 		btn_confirm1Clear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				for (int i = 0; i < confirmlbl_list.size(); i++) {
-					confirmlbl_list.clear();
-//				}
+				for (int i = 0; i < confirmlbl_list.size(); i++) {
+					confirmlbl_list.get(i).setText("");
+				}
+				lblPriceSum1.setText("");
+				confirmlbl_list.clear();
 			}
 		});
 		btn_confirm1Clear.setBounds(12, 588, 130, 63);

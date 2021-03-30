@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-public class PurchaseOption {
+public class PayOption {
 
 	private JFrame frame;
 
@@ -21,7 +21,7 @@ public class PurchaseOption {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PurchaseOption window = new PurchaseOption();
+					PayOption window = new PayOption();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +33,7 @@ public class PurchaseOption {
 	/**
 	 * Create the application.
 	 */
-	public PurchaseOption() {
+	public PayOption() {
 		initialize();
 	}
 
@@ -80,12 +80,12 @@ public class PurchaseOption {
 		
 		JLabel lblPriceSumMsg = new JLabel("\uACB0\uC81C \uAE08\uC561");
 		lblPriceSumMsg.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPriceSumMsg.setBounds(12, 515, 172, 45);
+		lblPriceSumMsg.setBounds(12, 505, 172, 45);
 		panelPayOption.add(lblPriceSumMsg);
 		
 		JLabel lblPriceSum = new JLabel("\uD569\uC0B0 \uAE08\uC561 \uD45C\uC2DC\uB420 \uBD80\uBD84");
 		lblPriceSum.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPriceSum.setBounds(304, 515, 168, 45);
+		lblPriceSum.setBounds(304, 505, 168, 45);
 		panelPayOption.add(lblPriceSum);
 		
 		JButton btn_payOptionClear = new JButton("\uC804\uCCB4 \uCDE8\uC18C");

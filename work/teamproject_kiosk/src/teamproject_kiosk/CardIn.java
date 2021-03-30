@@ -62,7 +62,11 @@ public class CardIn {
 				// 카드아웃 화면 출력
 			}
 		});
-		btn_cardIn.setBounds(163, 444, 159, 75);
+		btn_cardIn.setBounds(313, 576, 159, 75);
 		panelCardIn.add(btn_cardIn);
+		
+		JButton btn_cardInCancel = new JButton("\uCDE8\uC18C");
+		btn_cardInCancel.setBounds(12, 576, 159, 75);
+		panelCardIn.add(btn_cardInCancel);
 	}
 }

@@ -167,6 +167,7 @@ public class Confirm2 {
 		panelConfirmPage2.add(lblPriceSumName2);
 		
 		JLabel lblPriceSum2 = new JLabel(""); // 결제금액 총합
+		confirmlbl_list.add(lblMenuPrice_14);
 		lblPriceSum2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPriceSum2.setBounds(304, 505, 168, 45);
 		panelConfirmPage2.add(lblPriceSum2);
@@ -187,6 +188,7 @@ public class Confirm2 {
 				for (int i = 0; i < confirmlbl_list.size(); i++) {
 					confirmlbl_list.get(i).setText("");
 				}
+				confirmlbl_list.clear();
 			}
 		});
 		btn_confirm2Clear.setBounds(12, 588, 130, 63);

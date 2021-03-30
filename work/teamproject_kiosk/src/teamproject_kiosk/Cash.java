@@ -56,20 +56,20 @@ public class Cash {
 		lblCashMsg.setBounds(12, 83, 460, 184);
 		panelInputCash.add(lblCashMsg);
 		
-		JLabel lblPriceSumMsg = new JLabel("\uAD6C\uB9E4 \uAE08\uC561");
-		lblPriceSumMsg.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPriceSumMsg.setBounds(12, 277, 130, 48);
-		panelInputCash.add(lblPriceSumMsg);
+		JLabel lblCashPriceSumMsg = new JLabel("\uAD6C\uB9E4 \uAE08\uC561");
+		lblCashPriceSumMsg.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCashPriceSumMsg.setBounds(12, 277, 130, 48);
+		panelInputCash.add(lblCashPriceSumMsg);
 		
 		JLabel lblInputPriceMsg = new JLabel("\uD22C\uC785 \uAE08\uC561");
 		lblInputPriceMsg.setHorizontalAlignment(SwingConstants.CENTER);
 		lblInputPriceMsg.setBounds(12, 332, 130, 48);
 		panelInputCash.add(lblInputPriceMsg);
 		
-		JLabel lblPriceSum = new JLabel("");
-		lblPriceSum.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPriceSum.setBounds(154, 277, 238, 48);
-		panelInputCash.add(lblPriceSum);
+		JLabel lblCashPriceSum = new JLabel("");
+		lblCashPriceSum.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCashPriceSum.setBounds(154, 277, 238, 48);
+		panelInputCash.add(lblCashPriceSum);
 		
 		JLabel lblInputPrice = new JLabel(Integer.toString(0));
 		lblInputPrice.setHorizontalAlignment(SwingConstants.CENTER);
