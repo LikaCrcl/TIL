@@ -8,6 +8,7 @@
 			<provider-property name="@dbeaver-connection-type@" value="BASIC"/>
 			<provider-property name="@dbeaver-check-schema-content@" value="true"/>
 			<provider-property name="@dbeaver-always-show-dba@" value="false"/>
+			<bootstrap autocommit="false"/>
 		</connection>
 	</data-source>
 	<filters/>
