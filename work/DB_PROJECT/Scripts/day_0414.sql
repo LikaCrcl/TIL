@@ -80,8 +80,8 @@ SELECT PLAYER_ID 선수코드, PLAYER_NAME 선수이름 FROM PLAYER
 ORDER BY 선수코드;
 
 --GROUP BY / HAVING
---SELECT "POSITION", HEIGHT FROM PLAYER
---GROUP BY "POSITION" HAVING ; --어떤 조건이 각 데이터들에게 적용되는 조건이라면 WHERE에 쓰지만 나뉜 뒤의 그룹에 적용되는 조건은 HAVING
+SELECT "POSITION", AVG(HEIGHT) FROM PLAYER
+GROUP BY "POSITION" HAVING AVG(HEIGHT) > 180; --어떤 조건이 각 데이터들에게 적용되는 조건이라면 WHERE에 쓰지만 나뉜 뒤의 그룹에 적용되는 조건은 HAVING
 
 SELECT * FROM T_PROFESSOR;
 SELECT * FROM T_STUDENT;
@@ -99,20 +99,34 @@ SELECT DEPTNO 학과, AVG(BONUS) 평균보너스 FROM T_PROFESSOR GROUP BY DEPTNO;
 --EMPLOYEES TABLE에서 JOB_ID별로 평균 SALARY가 10000미만인 그룹의 SALARY 합계, 평균, 최대값, 최소값, 부서 총 인원 검색
 --JOB_ID 오름차순 정렬
 SELECT * FROM EMPLOYEES;
-SELECT * FROM EMPLOYEES GROUP BY JOB_ID;
+SELECT JOB_ID 부서, SUM(SALARY) 합계, AVG(SALARY) 평균, MAX(SALARY) 최대값, MIN(SALARY) 최소값, COUNT(EMPLOYEE_ID) 인원
+FROM EMPLOYEES 
+GROUP BY JOB_ID HAVING AVG(SALARY) < 10000
+ORDER BY 부서;
 
---부서 별 평균 급여를 검색하되, 평균 급여가 450보다 많은 부서만 검색
+--T_PROFESSOR TABLE에서 부서 별 평균 급여를 검색하되, 평균 급여가 450보다 많은 부서만 검색
+SELECT DEPTNO 부서, AVG(PAY) 평균급여 FROM T_PROFESSOR GROUP BY DEPTNO HAVING AVG(PAY) > 450;
 
 --PLAYER TABLE에서 몸무게가 80이상인 선수들의 평균 키가 180 이상인 포지션 검색
+SELECT * FROM PLAYER;
+SELECT "POSITION" "180/80 이상인 포지션", AVG(HEIGHT) FROM PLAYER WHERE WEIGHT >= 80 GROUP BY "POSITION" HAVING AVG(HEIGHT) >= 80; 
 
 --T_PROFESSOR TABLE에서 학과별, 직급별로 교수들의 평균 급여 검색
+SELECT DEPTNO 학과, "POSITION" 직급, AVG(PAY) 평균급여 FROM T_PROFESSOR GROUP BY DEPTNO, "POSITION";
 
 --T_EMP TABLE에서 매니저(MGR)별로 관리하는 직원들의 직원 수, 급여 총액, 급여 평균, 교통비(COMM) 평균 지급액 검색. 단, 사장님은 제외
+SELECT * FROM T_EMP;
+SELECT MGR 매니저, COUNT(EMPNO) "직원 수", SUM(SAL) "급여 총 액", AVG(SAL) "급여 평균", AVG(COMM) "교통비 평균 지급액" FROM T_EMP WHERE JOB NOT IN('PRESIDENT') GROUP BY MGR;
+																										-- 나는 NOT IN 으로 했는데 MGR IS NOT NULL 로 해도 됨.
 
 --T_PROFESSOR TABLE에서 직위가 정교수 혹은 조교수인 사람 중 과별로 과 번호, 소속교수 총 수, 근속일 평균, 급여 평균, 보너스 평균 검색
+SELECT * FROM T_PROFESSOR;					 --하루+2시간 일해도 이틀 일 한 것이므로 올림 처리 --SYSDATE라고 쓰면 오늘날짜.
+SELECT DEPTNO "과 번호", COUNT(PROFNO) "소속교수 총 수", CEIL(AVG(TO_DATE('2021/04/14', 'YYYY/MM/DD') - HIREDATE)) "근속일 평균", AVG(PAY) "급여 평균", NVL(AVG(BONUS), 0) "보너스 평균"
+FROM T_PROFESSOR WHERE ("POSITION" LIKE('정교수')) OR ("POSITION" LIKE('조교수'))
+						-- "POSITION" IN('조교수', '정교수') : POSITION(컬럼)	의 값이 뒤에 오는 값들 중 있으면 TRUE
+GROUP BY DEPTNO;
 
 --T_STUDENT TABLE에서 학과별(deptno1)로 학과번호, 최대몸무게-최소몸무게 차이 값을 검색
-
 
 
 
