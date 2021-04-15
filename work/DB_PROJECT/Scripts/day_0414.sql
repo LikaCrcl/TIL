@@ -123,7 +123,7 @@ SELECT MGR 매니저, COUNT(EMPNO) "직원 수", SUM(SAL) "급여 총 액", AVG(SAL) "급여
 SELECT * FROM T_PROFESSOR;					 --하루+2시간 일해도 이틀 일 한 것이므로 올림 처리 --SYSDATE라고 쓰면 오늘날짜.
 SELECT DEPTNO "과 번호", COUNT(PROFNO) "소속교수 총 수", CEIL(AVG(TO_DATE('2021/04/14', 'YYYY/MM/DD') - HIREDATE)) "근속일 평균", AVG(PAY) "급여 평균", NVL(AVG(BONUS), 0) "보너스 평균"
 FROM T_PROFESSOR WHERE ("POSITION" LIKE('정교수')) OR ("POSITION" LIKE('조교수'))
-						-- "POSITION" IN('조교수', '정교수') : POSITION(컬럼)	의 값이 뒤에 오는 값들 중 있으면 TRUE
+						-- "POSITION" IN('조교수', '정교수') : POSITION(컬럼)의 값이 뒤에 오는 값들 중 있으면 TRUE
 GROUP BY DEPTNO;
 
 --T_STUDENT TABLE에서 학과별(deptno1)로 학과번호, 최대몸무게-최소몸무게 차이 값을 검색

@@ -1,0 +1,196 @@
+--JOIN
+SELECT p.PLAYER_NAME, t.TEAM_NAME
+FROM PLAYER p JOIN TEAM t --FROM PLAYER p, TEAM t 라고 쓴거랑 같음
+ON p.TEAM_ID = t.TEAM_ID; --ON과 JOIN은 FROM절에 속함. ON을 WHERE로 바꾸고 WHERE절에 써도 됨
+
+--PLAYER, TEAM 
+--송종국 선수가 속한 팀의 전화번호 검색
+SELECT * FROM PLAYER;
+SELECT * FROM TEAM;
+SELECT p.PLAYER_NAME 이름, t.TEAM_NAME "팀 이름", t.TEL 전화번호 FROM PLAYER p, TEAM t WHERE p.TEAM_ID = t.TEAM_ID AND p.PLAYER_NAME = '송종국';
+
+--EMPLOYEES, JOBS
+--성 이름, EMAIL, JOB_TITLE
+SELECT * FROM EMPLOYEES;
+SELECT * FROM JOBS;
+SELECT e.LAST_NAME 성, e.FIRST_NAME 이름, e.EMAIL 이메일, j.JOB_TITLE 직업 FROM EMPLOYEES e, JOBS j WHERE e.JOB_ID = j.JOB_ID;
+
+--T_STUDENT, T_DEPARTMENT
+--학생이름 , 1전공 학과번호, 1전공 학과이름
+SELECT * FROM T_STUDENT;
+SELECT * FROM T_DEPARTMENT;
+SELECT s.NAME 이름, d.DEPTNO 학과번호, d.DNAME 학과명 FROM T_STUDENT s, T_DEPARTMENT d WHERE s.DEPTNO1 = d.DEPTNO;
+
+--T_STUDENT, T_PROFESSOR
+--학생이름, 지도교수 번호, 지도교수 이름
+SELECT * FROM T_STUDENT;
+SELECT * FROM T_PROFESSOR;
+SELECT s.NAME 학생이름, p.PROFNO "지도교수 번호", p.NAME "지도교수 이름" FROM T_STUDENT s, T_PROFESSOR p WHERE s.DEPTNO1 = p.DEPTNO AND p."POSITION" = '정교수';
+
+--T_STUDENT, T_DEPARTMENT, T_PROFESSOR
+--학생이름, 학과이름, 지도교수 이름
+SELECT * FROM T_STUDENT;
+SELECT * FROM T_DEPARTMENT;
+SELECT * FROM T_PROFESSOR;
+SELECT s.NAME 학생이름, d.DNAME 학과이름, p.NAME 지도교수이름
+FROM T_STUDENT s, T_DEPARTMENT d, T_PROFESSOR p
+WHERE s.DEPTNO1 = d.DEPTNO AND s.PROFNO = p.PROFNO;
+
+SELECT s.NAME, d.DNAME, p.NAME
+FROM T_STUDENT s
+	JOIN T_DEPARTMENT d ON s.DEPTNO1 = d.DEPTNO
+	JOIN T_PROFESSOR p ON s.PROFNO = p.PROFNO
+;
+
+--비등가조인
+--EMPLOYEES, DEPARTMENTS
+--95~97년도 입사 직원 이름, 입사일, 부서명 검색 후 입사일 순서대로 정렬
+SELECT e.LAST_NAME, e.HIRE_DATE, d.DEPARTMENT_NAME
+FROM EMPLOYEES e, DEPARTMENTS d
+WHERE e.DEPARTMENT_ID = d.DEPARTMENT_ID --근데 얘는 이 조건 때문에 등가조인임. 비등가조인은 등호(=) 없이 쓴 조인
+AND TO_CHAR(e.HIRE_DATE, 'YYYY') >= '1995' AND TO_CHAR(e.HIRE_DATE, 'YYYY') <= '1997'--TO_CHAR((날짜), 'YYYY') : 날짜에서 년도만 꺼내와 문자열로 변환.
+ORDER BY e.HIRE_DATE;
+--ON절은 JOIN이 되면서 실행되고
+--WHERE절은 JOIN이 모두 끝나고 실행됨
+--따라서 ON만 사용했을 때와 ON, WHERE를 사용한 결과가 같다면 ON만 사용하는 것이 좋다. (데이터 절약?)
+
+--까지 INNER JOIN(내부 조인)
+--OUTER JOIN(외부조인) : 두개 이상의 테이블 중 조건이 거짓이라도 한 개의 테이블의 모든 데이터가 검색되어야 할 때 사용
+--LEFT / RIGHT / FULL OUTER JOIN의 세 가지가 있음
+--지도교수가 없어도 출력되게 하기
+SELECT s.NAME 학생이름, p.PROFNO "지도교수 번호", p.NAME "지도교수 이름"
+FROM T_STUDENT s LEFT OUTER JOIN T_PROFESSOR p -- 이렇게 뒀을 때 T_STUDENT가 왼쪽이고 교수가 없어도(거짓) 학생(왼쪽)이 출력되게 해야해서 LEFT OUTER.
+ON s.PROFNO = p.PROFNO;
+
+--경기장 이름, 경기장 코드, 좌석 수, 홈 팀명
+SELECT * FROM STADIUM;
+SELECT * FROM TEAM;
+SELECT s.STADIUM_NAME "경기장 이름", s.STADIUM_ID "경기장 코드", s.SEAT_COUNT "좌석 수", NVL(t.TEAM_NAME, '홈 팀 없음') "홈 팀명"
+FROM STADIUM s
+	LEFT OUTER JOIN TEAM t ON s.HOMETEAM_ID = t.TEAM_ID;
+
+--SELF JOIN
+--사원명, 매니저명
+SELECT * FROM EMP;
+SELECT e1.ENAME, e2.ENAME
+FROM EMP e1, EMP e2
+WHERE e1.MGR = e2.EMPNO;
+
+--T_DEPT2
+--부서명과 그 상위부서명
+SELECT * FROM T_DEPT2;
+SELECT t1.DNAME 부서명, NVL(t2.DNAME, '최상위 부서') 상위부서명
+FROM T_DEPT2 t1 LEFT OUTER JOIN T_DEPT2 t2 ON t1.PDEPT = t2.DCODE;
+
+--T_PROFESSOR
+--교수번호, 교수이름, 입사일, 자신보다 입사일이 빠른 사람의 인원 수
+SELECT * FROM T_PROFESSOR;
+SELECT p1.PROFNO 교수번호, p1.NAME 이름, p1.HIREDATE 입사일, COUNT(p2.PROFNO) "선배 수"
+FROM T_PROFESSOR p1 LEFT OUTER JOIN T_PROFESSOR p2 ON p1.HIREDATE > p2.HIREDATE
+GROUP BY p1.PROFNO, p1.NAME, p1.HIREDATE;
+
+--SUB_QUERY
+--WHERE절
+SELECT * FROM PLAYER
+WHERE HEIGHT > (SELECT AVG(HEIGHT) FROM PLAYER);
+
+--FROM절
+--PLAYER TABLE에서 TEAM_ID가 'K01'인 선수 중 POSITION이 'GK'인 선수
+SELECT * FROM PLAYER WHERE TEAM_ID='K01';
+SELECT *
+FROM
+	(SELECT * FROM PLAYER WHERE TEAM_ID='K01')
+WHERE "POSITION"='GK';
+
+--SELECT절
+--플레이어 이름, 키, 평균 키 출력
+SELECT
+	PLAYER_NAME,
+	HEIGHT,
+	(SELECT AVG(HEIGHT) FROM PLAYER) "평균 키" --여기서 AVG(HEIGHT)를 그냥 쓰게 되면 GROUP으로 묶어줘야 하는데 묶어주면 그 한 명 한 명의 값에서 평균을 내므로 잘못된 값이 나옴.
+FROM PLAYER;
+
+--PLAYER TABLE에서 포지션 별 평균 키와 전체 평균 키 검색
+--전체 평균 키
+SELECT AVG(HEIGHT) FROM PLAYER;
+--포지션 별 평균 키
+SELECT AVG(HEIGHT) FROM PLAYER GROUP BY "POSITION";
+
+SELECT
+	"POSITION",
+	(SELECT AVG(HEIGHT) FROM PLAYER) "전체 평균 키",
+	AVG(HEIGHT) "포지션 별 평균 키"
+FROM PLAYER
+GROUP BY "POSITION";
+
+--포지션이 위로 오게 해보기
+SELECT
+	(SELECT AVG(HEIGHT) FROM PLAYER WHERE "POSITION"='GK') GK평균키,
+	(SELECT AVG(HEIGHT) FROM PLAYER WHERE "POSITION"='DF') DF평균키,
+	(SELECT AVG(HEIGHT) FROM PLAYER WHERE "POSITION"='FW') FW평균키,
+	(SELECT AVG(HEIGHT) FROM PLAYER WHERE "POSITION"='MF') MF평균키,
+	(SELECT AVG(HEIGHT) FROM PLAYER) 전체평균키
+FROM DUAL;
+--DUAL : 한 행짜리 결과를 보기 위한 테이블
+
+--한 문제 해서 확인 후 ROLLBACK누르기
+
+--PLAYER TABLE에서 NICKNAME이 NULL인 선수들을 정태민 선수의 닉네임으로 바꾸기
+SELECT * FROM PLAYER;
+UPDATE PLAYER
+SET NICKNAME = (SELECT NICKNAME FROM PLAYER WHERE PLAYER_NAME = '정태민')
+WHERE NICKNAME IS NULL;
+
+--EMPLOYEES TABLE에서 평균급여보다 더 낮은 급여를 받는 사람들을 10% 급여 인상시키기
+SELECT * FROM EMPLOYEES ORDER BY SALARY;
+SELECT AVG(SALARY) FROM EMPLOYEES;
+UPDATE EMPLOYEES
+SET SALARY = SALARY + SALARY * 0.1
+WHERE SALARY < (SELECT AVG(SALARY) FROM EMPLOYEES);
+
+--PLAYER TABLE에서 평균 키보다 큰 선수들 삭제
+SELECT * FROM PLAYER ORDER BY HEIGHT;
+SELECT AVG(HEIGHT) FROM PLAYER;
+DELETE FROM PLAYER
+WHERE HEIGHT > (SELECT AVG(HEIGHT) FROM PLAYER);
+
+--정남일 선수가 소속된 팀의 선수들 검색
+
+
+--EMP, DEPT
+--이름에 L이 있는 사원들의 부서명과 LOC 검색
+
+
+--JOBS, EMPLOYEES
+--JOB_TITLE에 'Manager'라는 문자열이 포함된 직원들의 평균 연봉을 JOB_TITLE별로 검색
+
+
+--축구선수들 중에서 각 팀별로 키가 가장 큰 선수들 검색
+
+
+--SCHEDULE, STADIUM
+--경기장 중 경기 일정이 20120501~20120503 사이에 있는 경기장 검색
+
+
+--T_PROFESSOR에서 김영조 교수와, 김영조 교수보다 입사일은 늦지만 급여가 높은 교수들의 PROFNO, NAME, PAY 검색
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
