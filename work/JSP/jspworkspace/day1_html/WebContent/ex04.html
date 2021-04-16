@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML 예제 #4 테이블(표) 태그 기본</title>
+<style type="text/css">
+	table {
+		width: 70%;
+		margin: auto;
+		border-collapse: collapse; /* 셀 간 간격 없애기 */
+	}
+	th, td {
+		border: 1px solid gray;
+		padding: 10px 0px; /* 위, 아래 10px, 좌 우 0px만큼 셀 크기 늘림 */
+	}
+	td {
+		text-align: center;
+	}
+	th {
+		
+	}
+</style>
+</head>
+<body>
+	<table> <!-- 표 시작 -->
+	<tr> <!-- 행 추가 -->
+		<th>이름</th> <!-- 제목 -->
+		<td>홍길동</td> <!-- 열 추가 -->
+	</tr>
+	<tr>
+		<th>이메일</th>
+		<td>hong@naver.com</td>
+	</tr>
+	<tr>
+		<th>나이</th>
+		<td>24</td>
+	</tr>
+	<tr>
+		<th>거주지</th>
+		<td style="color: blue;">서울</td>
+	</tr>
+	<tr>
+		<td colspan="2">환영합니다.</td> <!-- colspan : colspan 사용한 셀 기준 가로 셀 병합 cf.rowspan : rowspan 사용한 셀 기준 아래로 셀 병합 -->
+	</tr>
+
+	
+	</table>
+</body>
+</html>

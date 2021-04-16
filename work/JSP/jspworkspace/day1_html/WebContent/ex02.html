@@ -1,0 +1,72 @@
+<!DOCTYPE html> <!-- HTML5 : 웹 표준 -->
+<html>
+<head> <!-- head 태그는 웹문서와 관련된 정보 등을 설정 -->
+<meta charset="UTF-8">
+<title>HTML 예제 #2 기본태그의 스타일</title>
+<!-- 스타일 설정 -->
+<style type="text/css">
+h2 {
+	color:blue;
+}
+
+p {
+	border: 1px solid red;
+	width: 1000px;
+	height: 40px;
+	padding: 20px; /* style tag 안에 주석을 달 땐 이렇게 */
+	margin-left: 50px; 
+} <!-- border : 테두리, solid : 실선, padding : 내부 여백, margin : 바깥 여백 -->
+</style>
+</head>
+<body>
+	<h1>HTML</h1>
+	<h2>HyperText Markup Language</h2>
+	HyperText : 링크로 연결되는 문서<br>
+	Markup : 태그를 이용하여 웹문서 형식과 내용을 지정<br>
+	<!-- &amp; : "&" 기호 -->
+	<h2>meta 태그, 메타데이터 </h2>
+	브라우저가 html 문서를 해석하는데 필요한 정보. keyword 속성값은 검색엔진에 제공되는 정보이기도 하다. 
+	
+	<h2>html 태그</h2>
+	<p> <!-- 문단 설정 태그 -->
+	태그 이름으로 태그의 기능을 알수 있음.<br>
+	태그 내부에 속성을 설정할 수 있음.<br>
+	</p>
+	<b></b>
+	<dl>
+		<dt>Element(요소)</dt>
+			<dd>- 시작태그부터 종료태그까지<dd>
+		    <dd>- 종  료  태  그 없는 것도 있음.&lt;br&gt;,&lt;hr&gt; 태그 등 </dd>        
+			<dd>- 필요한 값 설정을 위해 태그 안에 속성도 있음.</dd>
+		<dt>block 요소</dt>
+			<dd>- 브라우저 화면 영역 전체를 너비(width)  로 한다.스타일속성으로 너비와 높이 변경 할수있다. </dd>
+			<dd>- 줄 바꿈이 되는 태그. p,div,h1~h6</dd> <!-- br 안써도 알아서 줄 바꿔준다는 얘기 -->
+		<dt>  inline 요소 </dt> 
+		<dd>-  태그 안의 내용만큼만 너비가 자동으로 설정된다.너비와 높이 변경안된다.</dd>
+		<dd>- 줄 바꿈 없이 내용을 담는 형식의 태그. b,span</dd>
+	</dl>	
+	<p title="p태그의 title속성값">
+		태그 속성은 태그의 기능을 세부적으로 설정한다.  스타일을 설정할때 사용한다.
+	</p>
+	<hr>
+		<a href="http://www.google.com" >구글로 가기1</a> <!-- href  속성 -->
+		<a href="http://www.google.com" target="_blank">구글로 가기2</a> <!-- target속성, _blank 는 새 창으로 연결시켜줌 -->
+		<a href="http://www.naver.com" target="_blank">ㅁㄴㅇㄻㄴㅇㄹ</a>
+		<img src="1.jpg" width="200px" height="100px"> <!-- 현재 폴더의 1.jpg -->
+		<img src="img/2.jpg" width="200px" height="100px"> 
+		<img src="img/3.jpg" width="200px" height="100px">
+	<hr>
+자신의 이름을 h4 태그 안에 작성해서 너비 200px, 높이 20px, 여백(안쪽 10px), 테두리 : 색상 blue 적용<br>
+<h4>
+<style type="text/css">
+h4 {
+width: 200px;
+height: 20px;
+padding: 10px;
+border: 1px solid blue;
+}
+</style>
+정모현
+</h4>
+</body>
+</html>
