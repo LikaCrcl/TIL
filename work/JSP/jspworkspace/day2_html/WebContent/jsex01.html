@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 예제 #1</title>
+<script type="text/javascript">
+	function datePrint() {
+
+		// 함수 안에서는 자바처럼 주석이 다시 //로 바뀜. 아래는 document 객체 사용 예
+		document.getElementById('test').innerHTML = Date(); // Date()는 js 내장함수
+		// id 속성값이 test인 태그의 내용에 Date() 결과 출력
+		// document.getElementById('test') 실행결과로 <p>....</p> 태그요소를 객체로 가져옴(아래에서 p의 id를 test로 설정해줬기 때문. <p>가 아닐 수 도 있음)
+
+	}
+</script>
+</head>
+<body>
+	<p id="test">자바스크립트 테스트중</p>
+	<input type="button" value="datePrint 실행" onclick="datePrint()">
+	<!-- 버튼 클릭 시(onclick 이벤트) 자바스크립트 함수 datePrint() 실행 -->
+</body>
+</html>

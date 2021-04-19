@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+	box-sizing: border-box;
+}
+
+header {
+	background-color: #666;
+	padding: 30px;
+	text-align: center;
+	font-size: 35px;
+	color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+	float: left;
+	width: 30%;
+	background: #ccc;
+	padding: 20px;
+	height: 500px;
+}
+
+iframe {
+	float: left;
+	border: none;
+	width: 70%;
+	height: 500px;
+	background: white;
+}
+
+
+/* Style the footer */
+footer {
+	background-color: #777;
+	padding: 10px;
+	text-align: center;
+	color: white;
+}
+
+a {
+	text-decoration: none;
+}
+
+</style>
+</head>
+<body>
+
+	<h2>CSS Layout Float</h2>
+	<p>이 예제에서는 헤더(header)와 두 개의 column(box) 및 풋터(footer)를 만들었습니다. 작은	화면에서 열은 서로 겹치게 됩니다.브라우저 창 크기를 조정하여 확인해보세요.</p>
+	<p>
+		반응형 웹디자인은 모든 디바이스에 잘 맞는 웹페이지를 만드는 것이다. 스크린 크기와 뷰포트가 달라져도 자동으로 맞춘다.
+	</p>
+
+	<header>
+		<h2>Examples....</h2>
+	</header>
+
+	<section>
+		<nav> <!-- 메뉴 영역  -->
+			<ul>
+				<li><a href="ex07_회원가입폼.html" target="main_">7번 예제</a></li>
+				<li><a href="ex08_id속성.html" target="main_">8번 예제</a></li>
+				<li><a href="ex09_block&inline.html" target="main_">9번 예제</a></li>
+			</ul>
+		</nav>
+		<!-- 메뉴를 클릭할 때 현재 문서의 일부를 바꾼다. -->
+		<iframe name="main_" src="ex07_회원가입폼.html"></iframe>
+
+	</section>
+
+	<footer>
+		<p>Footer : 2021 copyright &copy; mymy.com</p>
+	</footer>
+
+</body>
+</html>

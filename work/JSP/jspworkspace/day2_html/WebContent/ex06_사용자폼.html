@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML 예제#6 사용자폼 만들기-form 태그와 그 요소들</title>
+</head>
+<body>
+<h3>form 태그 사용</h3>
+<!-- form태그 사용 형식 : 기본 예제 -->
+
+<form> <!-- 사용자 입력 -->
+	<!-- <input> 사용자입력의 유형은 여러가지 : type 속성 설정 -->
+	<!-- form 요소의 name 속성은 사용자 입력값에 대한 변수(parameter)역할을 함.
+	저장하기 누르면 URL이 바뀌는데 이 방식을  get method방식이라고 함.(주로 조회에 사용) -->
+	이름 : <input type="text" name="name"> <br>
+	패스워드 : <input type="password" name="password"> <br>
+	이메일 : <input type="email" name="email"> <br>
+	나이 : <input type="number" name="age"> <br>
+	예약일 : <input type="date" name="regdate"> <br>
+	<!-- 여러개 중 하나 선택 -->
+	회원여부 : 
+	<input type="radio" name="member" value="true"> 회원
+	<input type="radio" name="member" value="false" checked="checked"> 비회원<br>
+	<!-- 여러개 중 복수 선택 -->
+	선호메뉴 : 
+	<input type="checkbox" name="menu" value="중식"> 중식
+	<input type="checkbox" name="menu" value="일식"> 일식
+	<input type="checkbox" name="menu" value="퓨전"> 퓨전
+	<input type="checkbox" name="menu" value="주류"> 주류<br>
+	거주지역 : 
+	<select name="location"> <!-- 풀다운 선택(다중 선택) -->
+		<option>서울</option>
+		<option>경기</option>
+		<option>부산</option>
+		<option>대전</option>
+		<option>광주</option>		
+	</select><br>
+	
+	<!-- 사용자 입력 데이터 전송을 위해 submit 동작이 필요하다 
+		 submit 동작을 하면 form태그 action 속성의 파일로 전달하여 처리한다.-->
+	<input type="submit" value="저장하기">
+	<input type="reset" value"다시쓰기">
+</form>
+</body>
+</html>
