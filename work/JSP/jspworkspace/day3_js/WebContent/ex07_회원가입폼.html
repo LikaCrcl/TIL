@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 폼 만들기</title>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+}
+
+th, td {
+	border: 1px solid gray;
+	padding: 10px 0px;
+}
+
+th {
+	background: purple;
+	color: white;
+	width: 40%;
+}
+
+input, select {
+	margin: 15px;
+	padding: 7px;
+	border-radius: 4px;
+	border: 2px solid #ccc;
+}
+/* input 태그 중에 스타일을 적용할 type 선택 */
+input[type=text], input[type=password], input[type=email] {
+	width: 80%;
+}
+
+input[type=number], select {
+	width: 30%;
+}
+
+input[type=submit], input[type=reset] {
+	padding: 7px 15px;
+	margin: 7px 15px;
+	background: #c69;
+	font-size: 1.1em;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+input[type=submit]:hover, input[type=reset]:hover { /* mouseover style */
+	background: #c39;
+}
+</style>
+</head>
+<body>
+	<div style="width: 70%; margin: auto;">
+		<h3>회원 등록</h3>
+	</div>
+	<form>
+		<table>
+			<tr>
+				<th>이름</th>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<th>패스워드</th>
+				<td><input type="password" name="pwd"></td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td><input type="email" name="email"></td>
+			</tr>
+			<tr>
+				<th>나이</th>
+				<td><input type="number" name="age" min="10" max="99"></td>
+			</tr>
+			<tr>
+				<th>거주지</th>
+				<td><select name="addr">
+						<option value="서울">서울</option>
+						<option value="경기">경기</option>
+						<option value="인천">인천</option>
+						<option value="강원">강원</option>
+						<option value="충북">충북</option>
+						<option value="충남">충남</option>
+				</select></td>
+			</tr>
+			<tr>
+				<th>성별</th>
+				<td><input type="radio" name="gender" value="male" id="male">
+					<label for="male">남자</label> <!-- id, label을 씀으로 인해 텍스트를 클릭해도 버튼 선택되게 만듦 -->
+					<input type="radio" name="gender" value="female" id="female">
+					<label for="female">여자</label></td>
+			</tr>
+			<tr>
+				<th>취미</th>
+				<td><input type="checkbox" name="hobby" value="운동" id="hobby1">
+					<label for="hobby1">운동</label> <input type="checkbox" name="hobby"
+					value="게임" id="hobby2"> <label for="hobby2">게임</label> <input
+					type="checkbox" name="hobby" value="음악감상" id="hobby3"> <label
+					for="hobby3">음악감상</label> <input type="checkbox" name="hobby"
+					value="영화감상" id="hobby4"> <label for="hobby4">영화감상</label>
+					<input type="checkbox" name="hobby" value="독서" id="hobby5">
+					<label for="hobby5">독서</label></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;"><input type="submit" value="가입하기"> <input
+					type="reset" value="다시쓰기"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

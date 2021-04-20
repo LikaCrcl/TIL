@@ -4,19 +4,62 @@
 <meta charset="UTF-8">
 <title>자바스크립트 예제 #1</title>
 <script type="text/javascript">
-	function datePrint() {
+	function datePrint() { /* 함수명 : datePrint()  */
 
-		// 함수 안에서는 자바처럼 주석이 다시 //로 바뀜. 아래는 document 객체 사용 예
-		document.getElementById('test').innerHTML = Date(); // Date()는 js 내장함수
-		// id 속성값이 test인 태그의 내용에 Date() 결과 출력
-		// document.getElementById('test') 실행결과로 <p>....</p> 태그요소를 객체로 가져옴(아래에서 p의 id를 test로 설정해줬기 때문. <p>가 아닐 수 도 있음)
-
+		//document 객체 사용예
+		document.getElementById('test').innerHTML = Date(); //Date()는 자바스크립트 내장함수
+		//id속성값이 test 인 태그의 내용에 Date() 결과를 출력하라.
+		//document.getElementById('test') 현재 웹문서 태그요소 중에 id가 'test'인 것을 가져온다.
+		//실행결과는 <p>...</p> 태그요소를 객체로 가져온다. innerHTML은  태그요소의 내용 속성.
+		//자바에서 객체.속성 또는 객체.메소드(함수)
 	}
 </script>
 </head>
 <body>
-	<p id="test">자바스크립트 테스트중</p>
+	<p id="test">자바스크립트 테스트 중입니다......태그사이의 이부분이 innerHTML 속성.</p>
 	<input type="button" value="datePrint 실행" onclick="datePrint()">
-	<!-- 버튼 클릭 시(onclick 이벤트) 자바스크립트 함수 datePrint() 실행 -->
+	<!-- 버튼 클릭시 (onclick 이벤트) 자바스크립트 함수 datePrint() 실행해라. -->
+<hr>
+	<input type="button" value="꺼주세요." 
+			onclick="document.getElementById('jstest').src='off.gif'">
+	<img id="jstest" src="off.gif" style="width:100px;">
+	<input type="button" value="켜주세요." 
+		    onclick="document.getElementById('jstest').src='on.gif'">
+<hr>
+	<input type="button" value="스타일 바꾸기" 
+			onclick="document.getElementById('test').style.fontSize='35px'">	
+<hr>
+	<input type="button" value="alert 출력하기"
+			onclick="alert('자바스크립트 어렵지않아요.!!')">	
+	<input type="button" value="브라우저 콘솔 출력" onclick="console.log('테스트 출력입니다.')">	
+	<!-- console.log 출력은 개발자도구에서 확인합니다. -->		    
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

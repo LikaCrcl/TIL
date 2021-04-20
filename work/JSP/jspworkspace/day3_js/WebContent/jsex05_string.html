@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript 예제 #5 문자열 메소드</title>
+</head>
+<body>
+<script type="text/javascript">
+	var text = "I am javascript sam.";
+	document.write('문자열 길이 : ' + text.length); document.write('<br>');
+	document.write('단어 위치찾기 : ' + text.indexOf('am')); document.write('<br>');
+	document.write('단어 위치찾기 : ' + text.lastIndexOf('am')); document.write('<br>');
+	var result = text.substring(7, 11); // 11 미포함
+	document.write('문자열 추출 : '+result); document.write('<br>');
+	result = text.replace('javascript', 'jsp'); // 대소문자 구분하여 일치하는 것을 변환.
+	result = text.replace(/javascript/i, 'jsp'); // 정규식 사용. 대소문자 구분 없이 함
+	document.write('문자열 치환 : ' + result); document.write('<br>');
+	document.write('문자 1개 추출 : ' + text.charAt(5)); document.write('<br>');
+	
+	var text2 = 'a,b,c,d,e,f';
+	var arr1 = text2.split(','); // 문자열을 , 로 구분, 배열로 변환.
+	document.write(arr1[3]);
+</script>
+</body>
+</html>
