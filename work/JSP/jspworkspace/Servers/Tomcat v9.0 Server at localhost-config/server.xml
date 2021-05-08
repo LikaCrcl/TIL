@@ -161,7 +161,7 @@
       <Context docBase="day7_servlet" path="/day7_servlet" reloadable="true" source="org.eclipse.jst.jee.server:day7_servlet"/>
       <Context docBase="day7_servlet/img" path="/image" reloadable="true" source="org.eclipse.jst.jee.server:day7_servlet"/>
       <Context docBase="c:\upload" path="/img_path" reloadable="true"/>
-      </Host>
+      <Context docBase="memberV2" path="/memberV2" reloadable="true" source="org.eclipse.jst.jee.server:memberV2"/></Host>
     </Engine>
   </Service>
 </Server>

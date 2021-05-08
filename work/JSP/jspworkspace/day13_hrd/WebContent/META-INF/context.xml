@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<!-- DBCP 와 관련된  정보와 JDBC 설정. -->
+    <Resource name="jdbc/gb2"  auth="Container"
+    		  type="javax.sql.DataSource"
+    		  maxTotal="10" minIdle="3" maxWaitMillis="10000"
+    		  username="gb2" password="gb2"
+    		  driverClassName="oracle.jdbc.driver.OracleDriver"
+    		  url="jdbc:oracle:thin:@localhost:1521:XE"
+    		  closeMethod="close" />
+<!-- name : 데이터베이스 이름
+	 auth : 실행 주체 (Container : 톰캣)
+	 type : DBCP 구현 클래스 이름
+	 maxTotal : 생성하는 커넥션 갯수 , minIdle: 풀에서 유휴 객체 최대수 , maxWait: 커넥션 요청관련 최대 대기 시간(ms)
+	 closeMethod : DBCP 클로즈 메소드  -->    		  
+</Context>

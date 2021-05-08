@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>login_jstl 프로젝트</title>
+<title>정모현 프로젝트</title>
 <style type="text/css">
 div{
 	width:200px;height: 200px;

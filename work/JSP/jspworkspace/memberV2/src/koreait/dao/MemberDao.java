@@ -158,11 +158,11 @@ public class MemberDao {
 			
 			//update : 무엇을 수정할까요?  email,age,gender,addr,hobby 
 			//sql : UPDATE MEMBER SET email='test@up.com',GENDER='female',addr='대전',hobby='[스키]',age=12 WHERE mno=1
-			public int update(Member member) {
-				
-				
-				
-			}
+//			public int update(Member member) {
+//				
+//				
+//				
+//			}
 			
 			
 			//delete
