@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+  <properties resource="com/korea/mybatis/db.properties"/>
+  <!-- vo클래스에 대한 alias 별칭 -->
+  <typeAliases> 
+  	<typeAlias type="com.korea.vo.Freeboard" alias="Freeboard" />
+  	<typeAlias type="com.korea.vo.Comment" alias="Comment"/>
+  </typeAliases> 	
+  <!--  db 연결정보 -->
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <!-- 데이터베이스 연결 풀 설정 -->
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <!-- JDBC로 처리하는 상당부분의 코드와 파라미터 설정 및 결과 매핑 해준다. : 테이블 기준으로 mapper 파일을 생성합니다. 모든 매퍼파일을 여기서 등록합니다.  -->
+  <mappers>
+    <mapper resource="com/korea/mybatis/freeboard.xml"/>
+    <mapper resource="com/korea/mybatis/comment.xml" />
+  </mappers>
+</configuration>
+
+

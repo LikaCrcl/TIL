@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="freeboard"> 
+<!-- namespace : 일종의 식별역할의 변수 -->
+
+	<!-- 글의 총개수 : getCount -->
+<select id="getCount" resultType="int">
+select count(*) from FREEBOARD
+</select>		
+	
+	<!--  페이지 글리스트 가져오기 -->
+<select id="getList2" parameterType="java.util.HashMap" resultType="Freeboard">
+select * from 
+	(select rownum R, T.* from
+		(select * from FREEBOARD order by idx desc) T -- 별칭;
+) where R between #{startNo} and #{endNo}
+</select>
+
+<select id="getList" parameterType="java.util.HashMap" 
+fetchSize="1000"
+resultType="Freeboard">
+<!-- 기호 &lt; 를 태그시작으로 해석하지 말아라. 단지 텍스트 데이터이다.-->
+<![CDATA[
+select * from
+(select  rownum as R, T.* 
+from FREEBOARD T where rownum<=#{endNo}) where #{startNo}<=R
+ ]]>
+</select>
+	
+	<!-- idx 로 한 개 레코드 가져오기 : selectByIdx-->
+<select id="selectByIdx" resultType="Freeboard" parameterType="int">
+select * from FREEBOARD where idx=#{idx}
+</select>		
+	
+	<!-- 조회수 1증가 : updateCount-->
+<update id="updateCount" parameterType="int">
+update FREEBOARD set READCOUNT=READCOUNT+1 where idx=#{idx}
+</update>	
+	
+	<!-- 댓글 갯수 commentCount 업데이트 : updateCmtCount , 파라미터 정수 2개 (HashMap) -->
+<update id="updateCmtCnt" parameterType="java.util.HashMap">
+update FREEBOARD set COMMENTCOUNT = #{cmtCnt} where idx=#{idx}
+</update>	
+
+<!-- 등록/수정/삭제 : resultType을 int 로 할수 있음.(정상 실행되면 실행된 갯수 리턴한다.)-->
+<insert id="insert" parameterType="Freeboard">
+insert into freeboard(idx,name,password,subject,content,ip)
+values (board_idx_seq.nextval,#{name},#{password},#{subject},#{content},#{ip})
+</insert>
+<update id="update" parameterType="Freeboard"> <!-- 제목,내용 수정-->
+update freeboard set subject=#{subject},content=#{content} 
+where idx=#{idx}
+</update>
+<delete id="delete" parameterType="int">
+delete from freeboard where idx=#{idx}
+</delete>
+
+</mapper>
+
+
+
+
+
+
+
+
